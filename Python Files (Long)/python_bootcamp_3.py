@@ -136,6 +136,59 @@
 # else:
 #     print("Unknown shape")
 
+# Q8
+# hour = int(input("Enter hour (0 - 23): "))
+# if 5 <= hour <= 11:
+#     print("Good Morning")
+# elif hour < 18:
+#     print("Good Afternoon")
+# elif hour < 22:
+#     print("Good Evening")
+# else: 
+#     print("Good Night")
+
+# Q9
+# color = input("Give me a color (red, green, yellow): ").strip()
+# if color == "red":
+#     print("Stop")
+# elif color == "green":
+#     print("Go")
+# elif color == "yellow":
+#     print("Ready")
+# else:
+#     print("Invalid color")
+
+# WEEK 5 INCLASS EXERCISES AND CHALLENGE
+# Q1:
+# for i in range(1, 11):
+#     print(i, end = " ")
+
+# Q3:
+# n = int(input("Gives a number 'n': "))
+# sum = 0
+# for i in range(1, n+1):
+#     sum += i
+# print("Sum:", sum)
+
+# Q4:
+# word = input("Word: ")
+# num = int(input("Number: "))
+# for i in range(num):
+#     print(word, end = " ")
+
+# Q8:
+# for i in range(1, 6):
+#     print(f"{i} → {i**2}")
+
+# Q10
+# sum = 0
+# num = int(input("Enter number (not 0): "))
+# while num != 0:
+#     sum += num
+#     num = int(input("Enter number (not 0): "))
+# print("Sum:", sum)
+
+
 # W3resource Python basic part 2    
 
 # Q1: Write a Python function that takes a sequence of numbers and determines 
