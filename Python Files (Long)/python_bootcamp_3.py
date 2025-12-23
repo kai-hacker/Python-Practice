@@ -249,6 +249,25 @@
 #         count += 1
 # print("Vowels in word:", count) 
 
+# Q9: Ask for a positive integer n. Repeat these rules until n becomes 1:
+#  If n is even, divide by 2. If n is odd, multiply by 3 and add 1. Count how many steps it takes
+# n = int(input("Enter a number: "))
+# count = 0
+# while n != 1:
+#     if n % 2 == 0:
+#         # Interger division. Normal division in python results in an float
+#         n //= 2
+#     else:
+#         n = n * 3 + 1
+#     count += 1
+# print(f"Took {count} steps")
+
+# WEEK 6 INCLASS EXERCISES AND CHALLENGE
+# Q2
+# for i in range(1, 10+1):
+#     if i == 3:
+#         continue
+#     print(i, end = " ")
 
 
 # W3resource Python basic part 2    
