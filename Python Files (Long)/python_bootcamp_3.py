@@ -330,6 +330,51 @@
 #             continue
 #         print(i, j)
 
+# WEEK 7 INCLASS EXERCISES AND CHALLENGE
+# Q1
+# def greet_name(name):
+#     print(f"Welcome {name}!")
+# name = input("Enter name: ")
+# greet_name(name)
+
+# Q4
+# def is_even(num):
+#     if num % 2 == 0:
+#         return True
+#     else:
+#         return False
+# num = int(input("Give me an integer: "))
+# print("Even") if is_even(num) else print("Odd")
+
+# Q5
+# def formatted_name(first, last):
+#     # Python name can be concatenated like this
+#     name = last + ", " + first
+#     return name
+# first = input("Enter first name: ")
+# last = input("Enter last name: ")
+# print(formatted_name(first, last))
+
+# Q8
+# def count_chars(text):
+#     count = len(text)
+#     return count
+# text = input("> ")
+# print(count_chars(text))
+
+# Q11
+# def is_prime(n):
+#     # Number has to be bigger than 1. 1 is a prime number
+#     if n <= 1:
+#         return False
+#     # Number has to be divided by numbers smaller than itself
+#     for i in range(2, n):
+#         if n % i == 0:
+#             return True
+#     return False
+# num = int(input("Give me an integer: "))
+# print(is_prime(num))
+
 # W3resource Python basic part 2    
 
 # Q1: Write a Python function that takes a sequence of numbers and determines 
