@@ -188,6 +188,68 @@
 #     num = int(input("Enter number (not 0): "))
 # print("Sum:", sum)
 
+# WEEK 5 POST CLASS EXERCISES AND CHALLENGE
+# Q1: Ask for n and calculate the sum of all odd numbers from 1 to n
+# sum = 0
+# n = int(input("Enter a number: "))
+# for i in range(1, n+1):
+#     if i % 2 == 1:
+#         sum += i
+# print("Sum of all odd numbers from 1 to n:",sum)
+
+# Q2: Ask for a number x and print its multiplication table from 1 to 10.
+# n = int(input("Enter a number: "))
+# for i in range(1, 11):
+#     print(f"{i} * {n} = {i*n}")
+
+# Q3: Use a while loop to find the smallest number greater than 0 that is divisible by both 3 and 5.
+# n = 1
+# while True:
+#     if n % 3 == 0 and n % 5 == 0:
+#         print(n)
+#         break
+#     n+=1
+
+# Q4: 
+# n = int(input("Enter a number: "))
+# while n != 0:
+#     print(n)
+#     n -= 1
+# print("Go")
+
+# Q6: 
+# n = int(input("Enter a number: "))
+# product = 1
+# for i in range(1, n+1):
+#     product *= i
+# print(product)
+
+# Q7: Ask for a positive integer and print its digits in reverse order using a while loop.
+# Solution 1: Use range, but reverse step -1. Starts from len() - 1, ends with -1
+# Change the number to a string to loop through the number
+# n = int(input("Enter a number (at least 4 digits): "))
+# for i in range(len(str(n))-1, -1, -1):
+#     print(str(n)[i], end ="")
+# 
+# Solution 2: Using modulo (%) and integer division (//)
+# The opposite of getting the remainder (%) is integer division (//).
+# num = int(input("Enter a number (at least 4 digits): "))
+# while num > 0:
+#     digit = num % 10
+#     print(digit, end = "")
+#     num //= 10
+
+# Q8: Ask for a word and count how many vowels (a, e, i, o, u) it has.s
+# Make a list of vowels, and use 'in'
+# vowels = ['a', 'e', 'i', 'o', 'u']
+# count = 0
+# word = input("Give a word (at least 6 characters): ")
+# for char in word:
+#     if char in vowels:
+#         count += 1
+# print("Vowels in word:", count) 
+
+
 
 # W3resource Python basic part 2    
 
@@ -301,6 +363,13 @@
 #     print(words)
 
 # all_possible_aeioI()
+
+# Q: Count the digits in a number
+# num = 88888888555
+# digit_count = {}
+# for d in str(num):
+#     digit_count[d] = digit_count.get(d, 0) + 1
+# print(digit_count)
 
 
 
