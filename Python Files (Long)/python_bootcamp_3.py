@@ -269,6 +269,66 @@
 #         continue
 #     print(i, end = " ")
 
+# Q3
+# n = int(input("Enter a number: "))
+# sum = 0
+# for i in range(1, n + 1):
+#     sum += i
+#     if sum >= 50:
+#         break
+#     print(i, end = " ")
+
+# Q5: Use nested loops to print a multiplication table from 1 to 3.
+# for i in range(1, 4):
+#     for j in range(1, 4):
+#         print(f"{i}x{j}={i*j}", end = " ")
+#     print("")
+
+# Q6:
+# name = input("Enter name: ")
+# while name.lower() != "exit":
+#     if name != "":
+#         print(name)
+#     name = input("Enter name: ")
+
+# Q7:
+# for i in range(5):
+#     n = int(input("Enter an integer: "))
+#     if n % 2 == 0:
+#         break
+
+# Q8
+# Outer loop: row. Inner loop: row
+# for i in range(5):
+#     for j in range(5):
+#         print("*", end = '')
+#         if j == i:
+#             break
+#     print("")
+
+# Q9
+# for i in range(1, 6):
+#     if i == 3:
+#         continue
+#     for j in range(1, 9):
+#         print(f"{i}x{j}={i*j}", end = " ")
+#     print("")
+
+# WEEK 6 POST CLASS EXERCISES AND CHALLENGE
+
+# Q3
+# for i in range(1, 101):
+#     # is_integer() is a method to check float
+#     if (i**0.5).is_integer():
+#         print(i)
+#         break
+
+# Q7:
+# for i in range(1, 4):
+#     for j in range(1, 4):
+#         if (i+j) % 2 == 0:
+#             continue
+#         print(i, j)
 
 # W3resource Python basic part 2    
 
