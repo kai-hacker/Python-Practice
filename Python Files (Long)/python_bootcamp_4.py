@@ -140,7 +140,7 @@
 # try:
 #     fname = open(filename)
 # except:
-#      print('File cannot be opened:', fname)
+#      print('File cannot be opened:', filename)
 # count = 0
 # sum = 0
 # for line in fname:
@@ -149,4 +149,49 @@
 #         final_space_index = line.rfind(" ")
 #         sum += float(line[final_space_index+1:])
 # print(f"Count: {count}. Sum: {sum}. Average: {sum / count}")
+
+# Q3: prints a funny message when the user types in the exact file name "na na boo boo". 
+# filename = input("Enter the file name: ")
+# try:
+#     fname = open(filename)
+# except:
+#     if filename == "na na boo boo":
+#         print("NA NA BOO BOO TO YOU - You have been punk'd!")
+#     else: 
+#         print('File cannot be opened:', filename)
+
+# W3RESOURCES Python Conditional Statements and loops
+# Q2: Write a Python program to read first n lines of a file.
+fname = 'Python Files (Long)/mbox2.txt'
+# Solution 1:
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+n = int(input("> "))
+count = 0
+for line in fhand:
+    # r.strip() removes the extra line
+    print(line.rstrip())
+    count += 1
+    if count == n:
+        break
+
+# Solution 2
+try:
+    # try, with, as
+    # with open(...) = open(fname), close(fname). Auto close
+    with open(fname) as fhand:
+        n = int(input("> "))
+        # .readlines returns all the lines as a list of strings [line1, line2, ...]
+        # [:] slice the list. Slice can be used with list.
+        # [:n] from the 1st element to the nth element, so n number of lines
+        for line in fhand.readlines()[:n]:
+            print(line.rstrip())
+except:
+    print('File cannot be opened:', fname)
+
+
+
     
