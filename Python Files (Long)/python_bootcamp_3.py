@@ -450,7 +450,7 @@
 #     print("All values are unique")
 # else:
 #     print("Got duplicates")
-# Check for False in python: if not check, if check == False, if check if False (advanced & not recommended)
+# Check for False in python: if not check, if check == False, if check is False (advanced & not recommended)
 
 # Q2: Write a Python program that creates all possible strings 
 # using the letters 'a', 'e', 'i', 'o', and 'I'. Ensure that each character is used only once.
@@ -495,6 +495,37 @@
 #     digit_count[d] = digit_count.get(d, 0) + 1
 # print(digit_count)
 
+# W3RESOURCES Python Conditional Statements and loops
+# Q4: Write a Python program to construct the following pattern, using a nested for loop.
+# * 
+# * * 
+# * * * 
+# * * * * 
+# * * * * * 
+# * * * * 
+# * * * 
+# * * 
+# *
+# 9 rows, so outer loop 9 iterations
+# 9 = 5 * 2 - 1
+# for i in range(1, 2*5):
+#     # 2 different patterns, 2 different inner loops, separated by if, else
+#     # i <= 5
+#     if i <= 5:
+#         # j goes from 1 to 5, ascending
+#         for j in range(i):
+#             print("* ", end='')
+#     # Decrease over time, use deduction
+#     else:
+#         # i goes from 6 to 9
+#         # j goes from 10 - 6 = 4, 10 - 7 = 3, ...
+#         for j in range(2*5 - i):
+#             print("* ", end='')
+#     print('')
+
+# Q5: Write a Python program that accepts a word from the user and reverses it.
+# text = input("Enter a string: ").strip()
+# print(text[::-1])
 
 
 
