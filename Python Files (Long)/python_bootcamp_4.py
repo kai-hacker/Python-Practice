@@ -129,10 +129,24 @@
 # print(inp)
 
 # Q2: Write a program to prompt for a file name, and then read through the file and look for lines of the form:
-# X-DSPAM-Confidence:0.8475
+# X-DSPAM-Confidence: 0.8475
 # When you encounter a line that starts with "X-DSPAM-Confidence:" pull apart 
 # the line to extract the floating-point number on the line. Count these lines and then 
 # compute the total of the spam confidence values from these lines. When you reach the end of the file,
 # print out the average spam confidence.
+# Before every number, there's a space, so look for the index of that final space
 
+# filename = input("Enter the file name: ") # Python Files (Long)/mbox.txt
+# try:
+#     fname = open(filename)
+# except:
+#      print('File cannot be opened:', fname)
+# count = 0
+# sum = 0
+# for line in fname:
+#     if line.startswith("X-DSPAM-Confidence:"):
+#         count += 1
+#         final_space_index = line.rfind(" ")
+#         sum += float(line[final_space_index+1:])
+# print(f"Count: {count}. Sum: {sum}. Average: {sum / count}")
     
