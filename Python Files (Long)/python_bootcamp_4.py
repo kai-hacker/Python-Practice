@@ -193,7 +193,7 @@
 #     print('File cannot be opened:', fname)
 
 # Q3: Write a Python program to append text to a file and display the text. 
-fname = 'Python Files (Long)/mbox3.txt'
+# fname = 'Python Files (Long)/mbox3.txt'
 # Open twice, first a for append, r+ or w would override the content
 # try:
 #     fhand = open(fname, 'a')
@@ -211,6 +211,24 @@ fname = 'Python Files (Long)/mbox3.txt'
 #     exit()
 # added_line = fhand.readlines()[-1].rstrip()
 # print(added_line)
+
+# Q8: Write a python program to find the longest words.
+# fname = 'Python Files (Long)/mbox3.txt'
+# try:
+#     fhand = open(fname, 'r')
+# except:
+#     print('File cannot be opened:', fname)
+#     exit()
+# # fhand.read().split() automatically creates a list of the words
+# # .split(), by default, split a string on space " ", tabs \t, newlines \n 
+# words = fhand.read().split()
+# longest_word = words[0]
+# for i in range(1, len(words)):
+#     if len(words[i]) > len(longest_word):
+#         longest_word = words[i]
+# print(words)
+# print(longest_word)
+
 
 
 
