@@ -162,35 +162,55 @@
 
 # W3RESOURCES Python Conditional Statements and loops
 # Q2: Write a Python program to read first n lines of a file.
-fname = 'Python Files (Long)/mbox2.txt'
+# fname = 'Python Files (Long)/mbox2.txt'
 # Solution 1:
-try:
-    fhand = open(fname)
-except:
-    print('File cannot be opened:', fname)
-    exit()
-n = int(input("> "))
-count = 0
-for line in fhand:
-    # r.strip() removes the extra line
-    print(line.rstrip())
-    count += 1
-    if count == n:
-        break
+# try:
+#     fhand = open(fname)
+# except:
+#     print('File cannot be opened:', fname)
+#     exit()
+# n = int(input("> "))
+# count = 0
+# for line in fhand:
+#     # r.strip() removes the extra line
+#     print(line.rstrip())
+#     count += 1
+#     if count == n:
+#         break
+# 
+# # Solution 2
+# try:
+#     # try, with, as
+#     # with open(...) = open(fname), close(fname). Auto close
+#     with open(fname) as fhand:
+#         n = int(input("> "))
+#         # .readlines returns all the lines as a list of strings [line1, line2, ...]
+#         # [:] slice the list. Slice can be used with list.
+#         # [:n] from the 1st element to the nth element, so n number of lines
+#         for line in fhand.readlines()[:n]:
+#             print(line.rstrip())
+# except:
+#     print('File cannot be opened:', fname)
 
-# Solution 2
-try:
-    # try, with, as
-    # with open(...) = open(fname), close(fname). Auto close
-    with open(fname) as fhand:
-        n = int(input("> "))
-        # .readlines returns all the lines as a list of strings [line1, line2, ...]
-        # [:] slice the list. Slice can be used with list.
-        # [:n] from the 1st element to the nth element, so n number of lines
-        for line in fhand.readlines()[:n]:
-            print(line.rstrip())
-except:
-    print('File cannot be opened:', fname)
+# Q3: Write a Python program to append text to a file and display the text. 
+fname = 'Python Files (Long)/mbox3.txt'
+# Open twice, first a for append, r+ or w would override the content
+# try:
+#     fhand = open(fname, 'a')
+# except:
+#     print('File cannot be opened:', fname)
+#     exit()
+# # append text
+# fhand.write("\nTry this shit")
+# # Close, then open again in r mode
+# fhand.close()
+# try:
+#     fhand = open(fname, 'r')
+# except:
+#     print('File cannot be opened:', fname)
+#     exit()
+# added_line = fhand.readlines()[-1].rstrip()
+# print(added_line)
 
 
 
