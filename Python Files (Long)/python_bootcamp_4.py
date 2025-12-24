@@ -83,9 +83,38 @@
 # The lists have the same length and list2[i] is the freq of list1[i]. Make comparisions
 
 # Lesson 10: File
-fhand = open('Python Files (Long)/mbox2.txt')
-line_count = 0
-for line in fhand:
-    count += 1
-print(line_count)
+# fhand = open('Python Files (Long)/mbox2.txt')
+
+# for loop to read line by line
+# line_count = 0
+# for line in fhand:
+#     line_count += 1
+#     print(line)
+# print(line_count)
+
+# read the entire file. Should only use when file is small enough
+# inp = fhand.read()
+# print(inp)
+
+# Check for information in a line
+# for line in fhand:
+#     if line.startswith("From"):
+#         print(line)
+
+# try and except
+# fname = input('Enter the file name: ')
+# try:
+#     fhand = open(fname)
+# except:
+#     print('File cannot be opened:', fname)
+#     exit()
+
+# open to write, write with new line, close
+# fhand = open('Python Files (Long)/mbox3.txt', 'r+')
+# # fhand.write("Ass\n") #\n to add a new line at the end
+# # fhand.write("This should be on the next line.")
+# # print(fhand.read())
+# fhand.close()
+# print(fhand.read()) #File is closed
+
     
