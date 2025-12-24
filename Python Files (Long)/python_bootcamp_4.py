@@ -81,4 +81,11 @@
 # most_frequent_element(digits)
 # Solution 2: Get a list of uniques, then get a list of digit frequencies
 # The lists have the same length and list2[i] is the freq of list1[i]. Make comparisions
+
+# Lesson 10: File
+fhand = open('Python Files (Long)/mbox2.txt')
+line_count = 0
+for line in fhand:
+    count += 1
+print(line_count)
     
