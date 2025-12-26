@@ -1,5 +1,7 @@
-# 1. Sort Dictionary by Value
-# Write a Python script to sort (ascending and descending) a dictionary by value.
+'''
+1. Sort Dictionary by Value
+Write a Python script to sort (ascending and descending) a dictionary by value.
+'''
 
 # 2. Add Key to Dictionary
 # Write a Python script to add a key to a dictionary.
@@ -66,8 +68,10 @@ for i in range(1,16):
     dict7[i] = i**2
 print(dict7)
 
-# 8. Merge Two Python Dictionaries
-# Write a Python script to merge two Python dictionaries.
+'''
+8. Merge Two Python Dictionaries
+Write a Python script to merge two Python dictionaries.
+'''
 
 # 9. Iterate Over Dictionaries (Alternative)
 # Write a Python program to iterate over dictionaries using for loops.
@@ -119,3 +123,66 @@ print(color_dictionary)
 
 # 14. Sort Dictionary by Key
 # Write a Python program to sort a given dictionary by key.
+Dict14 = {1:5, 3:4, 'Kai': 5, 2:7}
+keys = Dict14.keys()
+keys = list(map(str, keys))
+keys.sort()
+sorted_dict = {}
+for key in keys:
+    if key.isdigit():
+        sorted_dict[key] = Dict14.get(int(key))
+    else:
+        sorted_dict[key] = Dict14.get(key)
+print(sorted_dict)
+    
+
+
+# 15. Get Maximum and Minimum Values of a Dictionary
+# Write a Python program to get the maximum and minimum values of a dictionary.
+my_dict = {'x': 500, 'y': 5874, 'z': 560}
+max_val = max([val for val in my_dict.values()])
+min_val = min([val for val in my_dict.values()])
+print(max_val,min_val)
+
+'''
+16. Get Dictionary from an Object's Fields
+Write a Python program to get a dictionary from an object's fields.
+'''
+
+'''
+17. Remove Duplicates from the Dictionary
+Write a Python program to remove duplicates from the dictionary.
+'''
+# 18. Check if a Dictionary is Empty
+# Write a Python program to check if a dictionary is empty or not.
+dict18 = {}
+x = 'Empty' if len(dict18) == 0 else 'Not Empty'
+print(x)
+
+# 19. Combine Two Dictionaries by Adding Values
+# Write a Python program to combine two dictionary by adding values for common keys.
+# d1 = {'a': 100, 'b': 200, 'c':300}
+# d2 = {'a': 300, 'b': 200, 'd':400}
+# Sample output: Counter({'a': 400, 'b': 400, 'd': 400, 'c': 300})
+d1 = {'a': 100, 'b': 200, 'c':300}
+d2 = {'a': 300, 'b': 200, 'd':400}
+re_19 = d1.copy()
+for key in d2.keys():
+    if key not in d1.keys():
+        re_19[key] = d2[key]
+    else:
+        re_19[key] += d2[key]
+print(re_19)
+
+# 20. Print All Distinct Values in a Dictionary
+# Write a Python program to print all distinct values in a dictionary.
+# Sample Data : [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+# Expected Output : Unique Values: {'S005', 'S002', 'S007', 'S001', 'S009'}
+dicts = [{"V":"S001"}, {"V": "S002"}, {"VI": "S001"}, {"VI": "S005"}, {"VII":"S005"}, {"V":"S009"},{"VIII":"S007"}]
+set = set()
+for dict in dicts:
+    keys = list(dict.keys())
+    i = keys[0]
+    j = dict[i]
+    set.add(j)
+print(set)
