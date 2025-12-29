@@ -160,6 +160,31 @@
 #     else: 
 #         print('File cannot be opened:', filename)
 
+# Q4: Given a list of tram stops and their routes, print a list of routes for each stop
+# use split() & rstrip()
+fname = 'tram_routes.txt'
+routes_by_stop = {}
+try:
+    # open file
+    with open(fname) as fhand:
+        for line in fhand:
+            # Remove space at the end of line
+            line = line.strip()
+            # Each line has 2 values. Assign them to the key & vaue for the dictionary
+            # They are separated by ","
+            stop, route = line.split(",")
+            print(line)
+            # Use in, check if the "stop" / key is in the dictionary of not
+            if stop not in routes_by_stop:
+                # create empty list of values for a key
+                # The Q asked for a list
+                routes_by_stop[stop] = []
+            # add route to the list of stops / key's values
+            routes_by_stop[stop].append(route)
+    print(routes_by_stop) 
+except:
+    print('File cannot be opened:', fname)
+
 # W3RESOURCES Python Conditional Statements and loops
 # Q2: Write a Python program to read first n lines of a file.
 # fname = 'Python Files (Long)/mbox2.txt'
