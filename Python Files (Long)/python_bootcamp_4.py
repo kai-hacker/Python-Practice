@@ -166,30 +166,97 @@
 # .split()
 # not in
 # .append()
-fname = 'Python Files (Long)/tram_routes.txt'
-routes_by_stop = {}
-try:
-    # open file
-    # or 'as f'
-    with open(fname) as fhand:
-        for line in fhand:
-            # Remove space at the end of line
-            line = line.strip()
-            # Each line has 2 values. Assign them to the key & vaue for the dictionary
-            # They are separated by ","
-            stop, route = line.split(",")
-            # Use in, check if the "stop" / key is in the dictionary of not
-            if stop not in routes_by_stop:
-                # create empty list of values for a key
-                # The Q asked for a list
-                routes_by_stop[stop] = []
-            # add route to the list of stops / key's values
-            routes_by_stop[stop].append(route)
-        # print the list for each route / key
-        for stop in routes_by_stop:
-            print(routes_by_stop[stop])
-except:
-    print('File cannot be opened:', fname)
+# fname = 'Python Files (Long)/tram_routes.txt'
+# routes_by_stop = {}
+# try:
+#     # open file
+#     # or 'as f'
+#     with open(fname) as fhand:
+#         for line in fhand:
+#             # Remove space at the end of line
+#             line = line.strip()
+#             # Each line has 2 values. Assign them to the key & vaue for the dictionary
+#             # They are separated by ","
+#             stop, route = line.split(",")
+#             # Use in, check if the "stop" / key is in the dictionary of not
+#             if stop not in routes_by_stop:
+#                 # create empty list of values for a key
+#                 # The Q asked for a list
+#                 routes_by_stop[stop] = []
+#             # add route to the list of stops / key's values
+#             routes_by_stop[stop].append(route)
+#         # print the list for each route / key
+#         for stop in routes_by_stop:
+#             print(routes_by_stop[stop])
+# except:
+#     print('File cannot be opened:', fname)
+
+# Q5: Using csv DictReader example
+# import csv
+# with open('Python Files (Long)/people.csv', newline='', encoding='utf-8') as f:
+#     reader = csv.DictReader(f)
+#     for row in reader:
+#         print(row)
+
+# Q6:
+# import csv
+# # data is the csv file in dict. format
+# def max_rainfall(data):
+#     max_rain = None
+#     for row in data:
+#         # row["Rain_mm"] - Accesses the value from the dictionary row 
+#         # using the key "Rain_mm". 
+#         # rmb, each row is a library
+#         rain = float(row["Rain_mm"])
+#         if max_rain == None or rain > max_rain:
+#             max_rain = rain
+#     return max_rain
+# data = csv.DictReader(open(fname))
+# rain = max_rainfall(data)
+
+# WEEK 10 INCLASS EXERCISES AND CHALLENGE
+# Q1: Read from input.txt, line by line. Write the line to output.txt where 
+# each line is prefixed with its line number starting from 1.
+# each line in output.txt starts with a line number
+# File names
+fname_input = 'Python Files (Long)/input.txt'
+fname_output = 'Python Files (Long)/output.txt'
+fhand_input = open(fname_input, 'r', newline = '')
+fhand_output = open(fname_output, 'w', newline = '')
+# line number starts at 1
+line_num = 1
+for line in fhand_input:
+    fhand_output.write(f"{line_num} {line}")
+    line_num +=1
+fhand_input.close()
+fhand_output.close()
+
+# Q2: Count Lines, Words, Characters (Text → Text Report)
+# number of lines, total number of words (split by spaces), total number of characters (including spaces)
+# f.seek(0)
+# fname = 'Python Files (Long)/input.txt'
+# f = open(fname, 'r', newline = '')
+# lines_count = 0
+# word_count = 0 
+# char_count = 0
+# lines = f.readlines()
+# # Get a list of lines. count the length of the list
+# # lines_count = len(lines)
+# # print(lines)
+# # print(lines_count)
+# # Get the whole file as a string
+# # When you call readlines(), it reads the entire file and moves the file pointer to the end. 
+# # Calling read() afterwards has nothing left to read.
+# # Reset to beginning f.seek(0)
+# f.seek(0)
+# inp = f.read()
+# print(inp)
+# # count the number of charaters in the string that contains the whole content
+# char_count = len(inp)
+# print(char_count)
+# # count the number of words, split the string into a list.
+# word_count = len(inp.split())
+# print(word_count)
 
 # W3RESOURCES Python Conditional Statements and loops
 # Q2: Write a Python program to read first n lines of a file.
