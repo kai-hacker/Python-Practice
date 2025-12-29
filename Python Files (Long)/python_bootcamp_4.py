@@ -218,45 +218,46 @@
 # Q1: Read from input.txt, line by line. Write the line to output.txt where 
 # each line is prefixed with its line number starting from 1.
 # each line in output.txt starts with a line number
+# could try enumerate()
 # File names
-fname_input = 'Python Files (Long)/input.txt'
-fname_output = 'Python Files (Long)/output.txt'
-fhand_input = open(fname_input, 'r', newline = '')
-fhand_output = open(fname_output, 'w', newline = '')
-# line number starts at 1
-line_num = 1
-for line in fhand_input:
-    fhand_output.write(f"{line_num} {line}")
-    line_num +=1
-fhand_input.close()
-fhand_output.close()
+# fname_input = 'Python Files (Long)/input.txt'
+# fname_output = 'Python Files (Long)/output.txt'
+# fhand_input = open(fname_input, 'r', newline = '')
+# fhand_output = open(fname_output, 'w', newline = '')
+# # line number starts at 1
+# line_num = 1
+# for line in fhand_input:
+#     fhand_output.write(f"{line_num} {line}")
+#     line_num +=1
+# fhand_input.close()
+# fhand_output.close()
 
 # Q2: Count Lines, Words, Characters (Text → Text Report)
 # number of lines, total number of words (split by spaces), total number of characters (including spaces)
 # f.seek(0)
-# fname = 'Python Files (Long)/input.txt'
-# f = open(fname, 'r', newline = '')
-# lines_count = 0
-# word_count = 0 
-# char_count = 0
-# lines = f.readlines()
-# # Get a list of lines. count the length of the list
-# # lines_count = len(lines)
-# # print(lines)
-# # print(lines_count)
-# # Get the whole file as a string
-# # When you call readlines(), it reads the entire file and moves the file pointer to the end. 
-# # Calling read() afterwards has nothing left to read.
-# # Reset to beginning f.seek(0)
-# f.seek(0)
-# inp = f.read()
-# print(inp)
-# # count the number of charaters in the string that contains the whole content
-# char_count = len(inp)
-# print(char_count)
-# # count the number of words, split the string into a list.
-# word_count = len(inp.split())
-# print(word_count)
+fname = 'Python Files (Long)/input.txt'
+f = open(fname, 'r', newline = '')
+lines_count = 0
+word_count = 0 
+char_count = 0
+lines = f.readlines()
+# Get a list of lines. count the length of the list
+# lines_count = len(lines)
+# print(lines)
+# print(lines_count)
+# Get the whole file as a string
+# When you call readlines(), it reads the entire file and moves the file pointer to the end. 
+# Calling read() afterwards has nothing left to read.
+# Reset to beginning f.seek(0)
+f.seek(0)
+inp = f.read()
+print(inp)
+# count the number of charaters in the string that contains the whole content
+char_count = len(inp)
+print(char_count)
+# count the number of words, split the string into a list.
+word_count = len(inp.split())
+print(word_count)
 
 # W3RESOURCES Python Conditional Statements and loops
 # Q2: Write a Python program to read first n lines of a file.
