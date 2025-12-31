@@ -7,6 +7,7 @@
 # fname_clean = 'Python Files (Long)/clean.txt'
 # with open(fname_input, 'r') as f_input, open(fname_clean, 'w') as f_clean:
 #     for line in f_input:
+#         'if line.strip()' is equal to 'if line.strip() != ""'
 #         if line.strip() != "":
 #             f_clean.write(line)
 

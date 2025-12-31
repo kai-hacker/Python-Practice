@@ -234,13 +234,13 @@
 
 # Q2: Count Lines, Words, Characters (Text → Text Report)
 # number of lines, total number of words (split by spaces), total number of characters (including spaces)
-# f.seek(0)
-fname = 'Python Files (Long)/input.txt'
-f = open(fname, 'r', newline = '')
-lines_count = 0
-word_count = 0 
-char_count = 0
-lines = f.readlines()
+# # f.seek(0)
+# fname = 'Python Files (Long)/input.txt'
+# f = open(fname, 'r', newline = '')
+# lines_count = 0
+# word_count = 0 
+# char_count = 0
+# lines = f.readlines()
 # Get a list of lines. count the length of the list
 # lines_count = len(lines)
 # print(lines)
@@ -249,15 +249,15 @@ lines = f.readlines()
 # When you call readlines(), it reads the entire file and moves the file pointer to the end. 
 # Calling read() afterwards has nothing left to read.
 # Reset to beginning f.seek(0)
-f.seek(0)
-inp = f.read()
-print(inp)
-# count the number of charaters in the string that contains the whole content
-char_count = len(inp)
-print(char_count)
-# count the number of words, split the string into a list.
-word_count = len(inp.split())
-print(word_count)
+# f.seek(0)
+# inp = f.read()
+# print(inp)
+# # count the number of charaters in the string that contains the whole content
+# char_count = len(inp)
+# print(char_count)
+# # count the number of words, split the string into a list.
+# word_count = len(inp.split())
+# print(word_count)
 
 # W3RESOURCES Python Conditional Statements and loops
 # Q2: Write a Python program to read first n lines of a file.
