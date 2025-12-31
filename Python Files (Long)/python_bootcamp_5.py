@@ -76,21 +76,58 @@
 
 # Q9: Compute a New Column. Given sales.csv with columns: item,price,quantity. 
 # Create sales_total.csv containing: item,price,quantity,total, where total = price * quantity.
-import csv
-fname_input = 'Python Files (Long)/txt files/sales.csv'
-fname_output = 'Python Files (Long)/txt files/sales_total.csv'
-with open(fname_input, 'r', newline = '') as csvinput, open(fname_output, 'w', newline = '') as csvoutput:
-    reader = csv.reader(csvinput)
-    writer = csv.writer(csvoutput)
-    first_row = next(reader)
-    price_index = first_row.index("price")
-    quantity_index = first_row.index("quantity")
-    writer.writerow(["item","price","quantity","total"])
-    for row in reader:
-        total = float(row[price_index]) * float(row[quantity_index])
-        # cannot use append because it will mutate the original
-        # use list + list concatenate
-        writer.writerow(row + [total])
+# import csv
+# fname_input = 'Python Files (Long)/txt files/sales.csv'
+# fname_output = 'Python Files (Long)/txt files/sales_total.csv'
+# with open(fname_input, 'r', newline = '') as csvinput, open(fname_output, 'w', newline = '') as csvoutput:
+#     reader = csv.reader(csvinput)
+#     writer = csv.writer(csvoutput)
+#     first_row = next(reader)
+#     price_index = first_row.index("price")
+#     quantity_index = first_row.index("quantity")
+#     writer.writerow(["item","price","quantity","total"])
+#     for row in reader:
+#         total = float(row[price_index]) * float(row[quantity_index])
+#         # cannot use append because it will mutate the original
+#         # use list + list concatenate
+#         writer.writerow(row + [total])
+
+# Q10: Count Rows Matching a Condition. Gpa >= 3.0
+# import csv
+# fname_input = 'Python Files (Long)/txt files/students.csv'
+# fname_output = 'Python Files (Long)/txt files/students_simple.csv'
+# with open(fname_input, 'r', newline = '') as csvinput, open(fname_output, 'w', newline = '') as csvoutput:
+#     reader = csv.reader(csvinput)
+#     writer = csv.writer(csvoutput)
+#     first_row = next(reader)
+#     gpa_index = first_row.index("gpa")
+#     count = 0
+#     for row in reader: 
+#         if float(row[gpa_index]) >= 3.0:
+#             count += 1
+#     print(count) #should be 3
+
+# Q11: Function: Count Keyword Occurrences. count_keyword_in_file(input_path, keyword) 
+# that returns how many lines contain the keyword.
+# ask the user for keyword
+# call the function on input.txt
+# write the count to keyword_count.txt
+keyword = input("Give a keyword to search for: ").strip()
+input_path = 'Python Files (Long)/txt files/input.txt'
+def count_keyword_in_file(input_path, keyword):
+    fname_output = 'Python Files (Long)/txt files/keyword_count.txt'
+    count = 0
+    with open(input_path, 'r') as f_input, open(fname_output, 'w') as f_output:
+        for line in f_input:
+            # string.find()
+            # if keyword in line is better
+            if keyword in line:
+                count += 1
+        f_output.write(str(count))
+count_keyword_in_file(input_path, keyword)
+
+
+
 
 
     
