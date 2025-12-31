@@ -112,19 +112,58 @@
 # ask the user for keyword
 # call the function on input.txt
 # write the count to keyword_count.txt
-keyword = input("Give a keyword to search for: ").strip()
-input_path = 'Python Files (Long)/txt files/input.txt'
-def count_keyword_in_file(input_path, keyword):
-    fname_output = 'Python Files (Long)/txt files/keyword_count.txt'
-    count = 0
-    with open(input_path, 'r') as f_input, open(fname_output, 'w') as f_output:
-        for line in f_input:
-            # string.find()
-            # if keyword in line is better
-            if keyword in line:
-                count += 1
-        f_output.write(str(count))
-count_keyword_in_file(input_path, keyword)
+# keyword = input("Give a keyword to search for: ").strip()
+# input_path = 'Python Files (Long)/txt files/input.txt'
+# def count_keyword_in_file(input_path, keyword):
+#     fname_output = 'Python Files (Long)/txt files/keyword_count.txt'
+#     count = 0
+#     with open(input_path, 'r') as f_input, open(fname_output, 'w') as f_output:
+#         for line in f_input:
+#             # string.find()
+#             # if keyword in line is better
+#             if keyword in line:
+#                 count += 1
+#         f_output.write(str(count))
+# count_keyword_in_file(input_path, keyword)
+
+# Q12: Longest Line Finder
+# def longest_line(input_path):
+#     longest = None
+#     # line num starts at 1
+#     line_num = 1
+#     with open(input_path, 'r') as f_input:
+#         for line in f_input:
+#             if longest == None or len(longest) < len(line):
+#                 longest = str(line_num) + " " + line
+#             # line_num increases by 1
+#             line_num += 1
+#     print(longest)
+# input_path = 'Python Files (Long)/txt files/input.txt'
+# longest_line(input_path)
+
+# Q13: Functions Normalize Whitespace
+# Write:
+# ● normalize_line(line) → replaces multiple spaces with a single space and
+# strips leading/trailing spaces
+# ● normalize_file(input_path, output_path) → reads input file and writes
+# normalized lines
+# In python, remove spaces with split & join
+# def normalize_line(line):
+#     line = line.strip()
+#     line = ' '.join(line.split())
+#     return line
+# input_path = 'Python Files (Long)/txt files/input.txt'
+# output_path = 'Python Files (Long)/txt files/output.txt'
+# def normalize_file(input_path, output_path):
+#     with open(input_path, 'r') as f_input, open(output_path, 'w') as f_output:
+#         for line in f_input:
+#             line = line.strip()
+#             line = ' '.join(line.split())
+#             # + "\n" to move to the next line and write
+#             f_output.write(line + "\n")
+# normalize_file(input_path, output_path)
+
+
 
 
 
