@@ -32,3 +32,25 @@
 # Given transactions.csv with columns: date,category,amount
 # is_valid_amount(s) → checks whether s is a valid number
 
+# Q6: Sum Numbers from a Text File. Read from numbers.txt, where each line contains one integer.
+# fname = 'Python Files (Long)/txt files/numbers.txt'
+# sum = 0
+# with open(fname, 'r') as f:
+#     # Each num is a line of type string, usually with \n at the end
+#     # int() also auto ignores whitespaces and newlines
+#     for num in f:
+#         sum += int(num)
+# print(sum)
+
+# Q7: Write to filtered_numbers.txt only numbers greater than or equal to T
+# fname_input = 'Python Files (Long)/txt files/numbers.txt'
+# fname_output = 'Python Files (Long)/txt files/filtered_numbers.txt'
+# t = int(input("Enter number to filter: "))
+# with open(fname_input, 'r') as f_input, open(fname_output, 'w') as f_output:
+#     for num in f_input:
+#         # use string.find() != -1
+#         if int(num) >= t:
+#             f_output.write(num)
+
+
+
