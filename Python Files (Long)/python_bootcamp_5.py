@@ -52,5 +52,51 @@
 #         if int(num) >= t:
 #             f_output.write(num)
 
+# Q8 — CSV: Copy Selected Columns
+# Task: Given students.csv with columns: name,age,major,gpa. Write students_simple.csv containing only name and gpa columns.
+# import to work with csv
+# import csv
+# fname_input = 'Python Files (Long)/txt files/students.csv'
+# fname_output = 'Python Files (Long)/txt files/students_simple.csv'
+# # newline='' is recommended for csv files
+# with open(fname_input, 'r', newline = '') as csvinput, open(fname_output, 'w', newline = '') as csvoutput:
+#     # reader = csv.reader, writer = csv.writer
+#     reader = csv.reader(csvinput)
+#     writer = csv.writer(csvoutput)
+#     # next() get the very first row, then continue to read the rest of the files
+#     first_row = next(reader)
+#     # list.index(item) find the index position of the item in the list
+#     name_index = first_row.index("name")
+#     gpa_index = first_row.index("gpa")
+#     # Because the loop starts from the 2nd row, the 1st row needs to be written manually
+#     writer.writerow(["name", "gpa"])
+#     # Can you "for" loop to read line by line, like .txt file
+#     for row in reader:
+#         writer.writerow([row[name_index], row[gpa_index]])
+
+# Q9: Compute a New Column. Given sales.csv with columns: item,price,quantity. 
+# Create sales_total.csv containing: item,price,quantity,total, where total = price * quantity.
+import csv
+fname_input = 'Python Files (Long)/txt files/sales.csv'
+fname_output = 'Python Files (Long)/txt files/sales_total.csv'
+with open(fname_input, 'r', newline = '') as csvinput, open(fname_output, 'w', newline = '') as csvoutput:
+    reader = csv.reader(csvinput)
+    writer = csv.writer(csvoutput)
+    first_row = next(reader)
+    price_index = first_row.index("price")
+    quantity_index = first_row.index("quantity")
+    writer.writerow(["item","price","quantity","total"])
+    for row in reader:
+        total = float(row[price_index]) * float(row[quantity_index])
+        # cannot use append because it will mutate the original
+        # use list + list concatenate
+        writer.writerow(row + [total])
+
+
+    
+
+
+
+
 
 
