@@ -196,8 +196,41 @@
 # fname_output = 'Python Files (Long)/txt files/merged.txt'
 # merge_alternating(fname_input_1, fname_input_2, fname_output)
 
+# W3RESOURCES Python File Input Output
+# Q4: Read Last N Lines
+# fname = 'Python Files (Long)/txt files/w3q4.txt'
+# with open(fname, 'r') as f:
+#     n = int(input("Number of lines to read from the bottom: "))
+#     # Use minus index to go backward. Then loop to print line by line
+#     for line in f.readlines()[-n:]:
+#         # rstrip() to remove new line after
+#         print(line.rstrip())
 
+# Q5: File to List. Write a Python program to read a file line by line and store it into a list.
+# fname = 'Python Files (Long)/txt files/w3q4.txt'
+# lines = []
+# with open(fname, 'r') as f:
+#     for line in f:
+#         lines.append(line)
+# print(lines)
 
+# W3RESOURCES Python CSV File Reading and Writing
+# Q8: CSV Skip Header and Count. Write a Python program that reads each row of a given csv file and 
+# skip the header of the file. Also print the number of rows and the field names.
+# import csv
+# fname = 'Python Files (Long)/txt files/sales_total.csv'
+# with open(fname, 'r', newline = '') as csvfile:
+#     # import csv
+#     # then use csv.function(), such as .reader() & .writer()
+#     reader = csv.reader(csvfile)
+#     # use next() to get the next line. At the start, will get the first line
+#     header = next(reader)
+#     count = 0
+#     for line in reader:
+#         count += 1
+#     print(header)
+#     print(count)
+    
 
     
 
