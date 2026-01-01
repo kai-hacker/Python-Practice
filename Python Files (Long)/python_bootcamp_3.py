@@ -362,6 +362,19 @@
 # text = input("> ")
 # print(count_chars(text))
 
+# Q11
+# def is_prime(n):
+#     # Number has to be bigger than 1. 1 is a prime number
+#     if n <= 1:
+#         return False
+#     # Number has to be divided by numbers smaller than itself
+#     for i in range(2, n):
+#         if n % i == 0:
+#             return True
+#     return False
+# num = int(input("Give me an integer: "))
+# print(is_prime(num))
+
 # Q12 Sum of Digit
 # def sum_digits(n):
 #     sum = 0
@@ -459,20 +472,128 @@
 #     return big_num
 # print(lcm(0,25))
 
-# WEEK 7 POST CLASS EXERCISES AND CHALLENGE
-
-# Q11
-# def is_prime(n):
-#     # Number has to be bigger than 1. 1 is a prime number
-#     if n <= 1:
-#         return False
-#     # Number has to be divided by numbers smaller than itself
-#     for i in range(2, n):
+# Q19 Check perfect number. Equals sum of its divisor
+# Get divisors of a number. I still can't understand this way. Just putting this here
+# def divisors(n):
+#     # Make a list for divisors
+#     result = []
+#     # Loop from 1 to floor of square root of n
+#     for i in range(1, int(n ** 0.5) + 1):
+#         # If no remainder, add to the list (obviously)
 #         if n % i == 0:
-#             return True
-#     return False
-# num = int(input("Give me an integer: "))
-# print(is_prime(num))
+#             result.append(i)
+#             # z = x / y, add x (the smaller one) then add y (the bigger one)
+#             # but this is so hard to rmb
+#             if i != n // i:
+#                 result.append(n // i)
+#     return sorted(result)
+# def is_perfect(num):
+#     divisors = []
+#     # proper divisors, all numbers smaller than num
+#     for i in range(1, num):
+#         if num % i == 0:
+#             divisors.append(i)
+#     return sum(divisors) == num
+# print(is_perfect(495))
+
+# Q20 Digit Frequency. Write a function digit_frequency(n, d)
+# use string.count() is the best
+# def digit_frequency(n,d):
+#     return str(n).count(str(d))
+# print(digit_frequency(12344, 4))
+
+# WEEK 7 POST CLASS EXERCISES AND CHALLENGE
+# Q4  Rectangle Perimeter
+# def perimeter(w, h):
+#     return 2 * (w + h)
+# print(perimeter(5, 15))
+
+# Q5 Word Duplicate Counter
+# def repeat_word(word, n):
+#     return (word + " ") *n
+# print(repeat_word("Hello", 5))
+
+# Q6 Trailing Zero Counter
+# Turn n into str, reverse it, count until no more 0
+# def count_trailing_zeros(n):
+#     reverse_n = str(n)[::-1]
+#     count = 0
+#     for digit in reverse_n:
+#         if int(digit) == 0:
+#             count+=1
+#         else:
+#             break
+#     return count
+# print(count_trailing_zeros(50000))
+
+# Q7
+# def compare_digits(n):
+#     even_count = 0
+#     odd_count = 0
+#     for digit in str(n):
+#         if int(digit) % 2 == 0:
+#             even_count += 1
+#         else:
+#             odd_count += 1
+#     if even_count > odd_count:
+#         print("Has more even digits")
+#     else:
+#         print("Has more odd digits")
+# compare_digits(2223)
+
+# Q10 Custom Power Function. Loop to multiply
+# isinstance
+# check for number: isinstance(x, (int, float))
+# def power(base, exp):
+#     if not isinstance(base, (int, float)) or not isinstance(exp, (int, float)):
+#         return
+#     product = 1
+#     for i in range(exp):
+#         product *= base
+#     return product
+# print(power(5,2))
+
+# Week 8 inclass exercises & challenge
+# Q1:
+# numbers = [5, 10, 15, 20, 25]
+# print(numbers)
+# print(len(numbers))
+
+# Q3: List Slicing
+# values = [0,1,2,3,4,5,6,7,8,9]
+# print(values[:4])
+# # Last 4 elements, start from position number 4 backward (-4)
+# print(values[-4:])
+# print(values[1:6])
+
+# Q5: Append and Insert
+# .insert(index, item)
+# .remove()
+# items = ["apple", "banana", "grape"]
+# items.insert(1, "grape")
+# print(items)
+
+# Q7 update a list
+# numbers = [2, 4, 6, 8, 10]
+# numbers[3] = 99
+# print(numbers)
+
+# Q8
+# student = {
+#     "name": "Long",
+#     "age": 20,         
+#     "major": "Computer Science" 
+# }
+# # use .items()
+# for key, value in student.items():
+#     print(key)
+#     print(value)
+
+# Q9
+# car = {"brand": "Toyota", "year": 2020, "color": "white"}
+# car["color"] = "black"
+# car["owner"] = "Long"
+# print(car)
 
 # W3resource Python basic part 2    
 
