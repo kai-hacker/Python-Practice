@@ -259,7 +259,6 @@
 # word_count = len(inp.split())
 # print(word_count)
 
-# W3RESOURCES Python Conditional Statements and loops
 # Q2: Write a Python program to read first n lines of a file.
 # fname = 'Python Files (Long)/mbox2.txt'
 # Solution 1:

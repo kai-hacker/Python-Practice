@@ -362,6 +362,105 @@
 # text = input("> ")
 # print(count_chars(text))
 
+# Q12 Sum of Digit
+# def sum_digits(n):
+#     sum = 0
+#     for digit in str(n):
+#         sum += int(digit)
+#     return sum
+# print(sum_digits(123))
+
+# Q13 Check Armstrong number
+# def is_armstrong(n):
+#     total_digits = len(str(n))
+#     digits_power_sum = 0
+#     for digit in str(n):
+#         digits_power_sum += int(digit) ** total_digits
+#     # In python, funciton can return comparision
+#     # get True or False
+#     return n == digits_power_sum
+# if is_armstrong(153):
+#     print("Armstrong number")
+# else:
+#     print("Not Armstrong number")
+
+# Q14 Reverse a number
+# Best way to reverse = string slicing. I alr know that
+# def reverse_number(n):
+#     n_reverse = int(str(n)[::-1])
+#     return n_reverse
+# print(reverse_number(23789))
+
+# Q15 GCD (Greatest Common Divisor)
+# def gcd(a,b):
+#     small_num = min(a,b)
+#     big_num = max(a,b)
+#     # % is for getting remainder in Python
+#     # Euclidean algorithm
+#     # 1st num, 2nd num, remainder.
+#     # If remainder = 0, 2nd num is the answer
+#     # If not (remainder != 0), the 1st & 2nd num get updated until remainder == 0.
+#     # Then, latest 2nd_num is the answer
+#     remainder = big_num % small_num
+#     if remainder == 0:
+#         return small_num
+#     while remainder != 0:
+#         big_num, small_num, remainder = small_num, remainder, small_num % remainder
+#     return small_num
+# print(gcd(45,25))
+
+# Q16 Count Divisors
+# def count_divisor(num):
+#     # divisor starts at 1 and ends at the number itself
+#     count = 0
+#     for i in range(1, num+1):
+#         if num % i == 0: count += 1
+#     return count
+# print(count_divisor(33))
+
+# Q17: Count Perfect Squares
+# 3 solutions. is_integer(), range(a, b+1), starts at a & increments. 3rd is cleanest
+# Solution 1
+# def count_squares(a, b):
+#     count = 0
+#     # Get a list of number between a & b inclusive
+#     for i in range(a, b+1):
+#         # Caculate the square, number to the power of 2
+#         square = i**2
+#         # If the square is between a & b, increment count by 1
+#         if a <= square <= b:
+#             count +=1
+#         elif square > b:
+#         # If the square is outside the range. End the loop. There is no more number to look for
+#             return count
+# print(count_squares(1,20))
+# Solution 2
+# def count_squares(a, b):
+#     a, b = min(a, b), max(a, b)
+#     count = 0
+#     while a**2 < b:
+#         if a**2 < b:
+#             count += 1
+#         a+=1
+#     return count
+# print(count_squares(1,20))
+
+# Q18: Returns the least common multiple of a & b
+# def lcm(a,b):
+#     # Check for positive integers not / larger than 0
+#     if a <= 0 or b <= 0:
+#         return
+#     # The starting point is the bigger number between a & b
+#     big_num = max(a, b)
+#     # While that number, divided by either a & b, do not give a remainder of 0
+#     # so "or", not "and"
+#     while big_num % a != 0 or big_num % b != 0:
+#         big_num += 1
+#     return big_num
+# print(lcm(0,25))
+
+# WEEK 7 POST CLASS EXERCISES AND CHALLENGE
+
 # Q11
 # def is_prime(n):
 #     # Number has to be bigger than 1. 1 is a prime number
