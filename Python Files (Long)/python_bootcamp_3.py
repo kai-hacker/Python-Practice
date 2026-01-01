@@ -595,6 +595,48 @@
 # car["owner"] = "Long"
 # print(car)
 
+# Q10 Remove Items from a Dictionary. .pop() and del
+# capitals = {"Vietnam": "Hanoi", "Japan": "Tokyo", "USA": "Washington", "France": "Paris"}
+# capitals.pop("Japan")
+# del capitals["France"]
+# print(capitals)
+
+# Q12: Maximum Value (No max())
+# numbers = [1,3,5,9,7]
+# max_num = numbers[0]
+# for i in range(1, len(numbers)):
+#     if numbers[i]> max_num:
+#         max_num = numbers[i]
+# print(max_num)
+
+# Q13 reverse list
+# Same with reverse string
+# def reverse_list(lst):
+#     return lst[::-1]
+# numbers = [1,3,5,9,7]
+# print(reverse_list(numbers))
+
+# Q17 Merge Two Dictionaries
+# Write a function merge_dicts(a, b) that returns a new dictionary containing all key–value pairs from a and b.
+# If duplicate keys exist, values from dictionary b override.
+# dict1 = {
+#     "id": 101,
+#     "name": "Alice",
+#     "score": 88
+# }
+# dict2 = {
+#     "id": 202,        # duplicate key: "id"
+#     "city": "Hanoi",
+#     "active": True
+# }
+# # Below is the cleanest way to add multiple dicts into 1
+# # In order of which dict is called
+# # If a key already exists in the new dict (duplicate keys from different dict), the key-value pair is skipped
+# new_dict = {}
+# for key in (dict1, dict2):
+#     new_dict.update(key)
+# print(new_dict)
+
 # W3resource Python basic part 2    
 
 # Q1: Write a Python function that takes a sequence of numbers and determines 
