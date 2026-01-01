@@ -629,9 +629,9 @@
 #     "city": "Hanoi",
 #     "active": True
 # }
-# # Below is the cleanest way to add multiple dicts into 1
-# # In order of which dict is called
-# # If a key already exists in the new dict (duplicate keys from different dict), the key-value pair is skipped
+# Below is the cleanest way to add multiple dicts into 1
+# In order of which dict is called
+# If a key already exists in the new dict (duplicate keys from different dict), the value is overridden
 # new_dict = {}
 # for key in (dict1, dict2):
 #     new_dict.update(key)
