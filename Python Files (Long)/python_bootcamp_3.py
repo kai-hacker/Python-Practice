@@ -375,6 +375,268 @@
 # num = int(input("Give me an integer: "))
 # print(is_prime(num))
 
+# Q12 Sum of Digit
+# def sum_digits(n):
+#     sum = 0
+#     for digit in str(n):
+#         sum += int(digit)
+#     return sum
+# print(sum_digits(123))
+
+# Q13 Check Armstrong number
+# def is_armstrong(n):
+#     total_digits = len(str(n))
+#     digits_power_sum = 0
+#     for digit in str(n):
+#         digits_power_sum += int(digit) ** total_digits
+#     # In python, funciton can return comparision
+#     # get True or False
+#     return n == digits_power_sum
+# if is_armstrong(153):
+#     print("Armstrong number")
+# else:
+#     print("Not Armstrong number")
+
+# Q14 Reverse a number
+# Best way to reverse = string slicing. I alr know that
+# def reverse_number(n):
+#     n_reverse = int(str(n)[::-1])
+#     return n_reverse
+# print(reverse_number(23789))
+
+# Q15 GCD (Greatest Common Divisor)
+# def gcd(a,b):
+#     small_num = min(a,b)
+#     big_num = max(a,b)
+#     # % is for getting remainder in Python
+#     # Euclidean algorithm
+#     # 1st num, 2nd num, remainder.
+#     # If remainder = 0, 2nd num is the answer
+#     # If not (remainder != 0), the 1st & 2nd num get updated until remainder == 0.
+#     # Then, latest 2nd_num is the answer
+#     remainder = big_num % small_num
+#     if remainder == 0:
+#         return small_num
+#     while remainder != 0:
+#         big_num, small_num, remainder = small_num, remainder, small_num % remainder
+#     return small_num
+# print(gcd(45,25))
+
+# Q16 Count Divisors
+# def count_divisor(num):
+#     # divisor starts at 1 and ends at the number itself
+#     count = 0
+#     for i in range(1, num+1):
+#         if num % i == 0: count += 1
+#     return count
+# print(count_divisor(33))
+
+# Q17: Count Perfect Squares
+# 3 solutions. is_integer(), range(a, b+1), starts at a & increments. 3rd is cleanest
+# Solution 1
+# def count_squares(a, b):
+#     count = 0
+#     # Get a list of number between a & b inclusive
+#     for i in range(a, b+1):
+#         # Caculate the square, number to the power of 2
+#         square = i**2
+#         # If the square is between a & b, increment count by 1
+#         if a <= square <= b:
+#             count +=1
+#         elif square > b:
+#         # If the square is outside the range. End the loop. There is no more number to look for
+#             return count
+# print(count_squares(1,20))
+# Solution 2
+# def count_squares(a, b):
+#     a, b = min(a, b), max(a, b)
+#     count = 0
+#     while a**2 < b:
+#         if a**2 < b:
+#             count += 1
+#         a+=1
+#     return count
+# print(count_squares(1,20))
+
+# Q18: Returns the least common multiple of a & b
+# def lcm(a,b):
+#     # Check for positive integers not / larger than 0
+#     if a <= 0 or b <= 0:
+#         return
+#     # The starting point is the bigger number between a & b
+#     big_num = max(a, b)
+#     # While that number, divided by either a & b, do not give a remainder of 0
+#     # so "or", not "and"
+#     while big_num % a != 0 or big_num % b != 0:
+#         big_num += 1
+#     return big_num
+# print(lcm(0,25))
+
+# Q19 Check perfect number. Equals sum of its divisor
+# Get divisors of a number. I still can't understand this way. Just putting this here
+# def divisors(n):
+#     # Make a list for divisors
+#     result = []
+#     # Loop from 1 to floor of square root of n
+#     for i in range(1, int(n ** 0.5) + 1):
+#         # If no remainder, add to the list (obviously)
+#         if n % i == 0:
+#             result.append(i)
+#             # z = x / y, add x (the smaller one) then add y (the bigger one)
+#             # but this is so hard to rmb
+#             if i != n // i:
+#                 result.append(n // i)
+#     return sorted(result)
+# def is_perfect(num):
+#     divisors = []
+#     # proper divisors, all numbers smaller than num
+#     for i in range(1, num):
+#         if num % i == 0:
+#             divisors.append(i)
+#     return sum(divisors) == num
+# print(is_perfect(495))
+
+# Q20 Digit Frequency. Write a function digit_frequency(n, d)
+# use string.count() is the best
+# def digit_frequency(n,d):
+#     return str(n).count(str(d))
+# print(digit_frequency(12344, 4))
+
+# WEEK 7 POST CLASS EXERCISES AND CHALLENGE
+# Q4  Rectangle Perimeter
+# def perimeter(w, h):
+#     return 2 * (w + h)
+# print(perimeter(5, 15))
+
+# Q5 Word Duplicate Counter
+# def repeat_word(word, n):
+#     return (word + " ") *n
+# print(repeat_word("Hello", 5))
+
+# Q6 Trailing Zero Counter
+# Turn n into str, reverse it, count until no more 0
+# def count_trailing_zeros(n):
+#     reverse_n = str(n)[::-1]
+#     count = 0
+#     for digit in reverse_n:
+#         if int(digit) == 0:
+#             count+=1
+#         else:
+#             break
+#     return count
+# print(count_trailing_zeros(50000))
+
+# Q7
+# def compare_digits(n):
+#     even_count = 0
+#     odd_count = 0
+#     for digit in str(n):
+#         if int(digit) % 2 == 0:
+#             even_count += 1
+#         else:
+#             odd_count += 1
+#     if even_count > odd_count:
+#         print("Has more even digits")
+#     else:
+#         print("Has more odd digits")
+# compare_digits(2223)
+
+# Q10 Custom Power Function. Loop to multiply
+# isinstance
+# check for number: isinstance(x, (int, float))
+# def power(base, exp):
+#     if not isinstance(base, (int, float)) or not isinstance(exp, (int, float)):
+#         return
+#     product = 1
+#     for i in range(exp):
+#         product *= base
+#     return product
+# print(power(5,2))
+
+# Week 8 inclass exercises & challenge
+# Q1:
+# numbers = [5, 10, 15, 20, 25]
+# print(numbers)
+# print(len(numbers))
+
+# Q3: List Slicing
+# values = [0,1,2,3,4,5,6,7,8,9]
+# print(values[:4])
+# # Last 4 elements, start from position number 4 backward (-4)
+# print(values[-4:])
+# print(values[1:6])
+
+# Q5: Append and Insert
+# .insert(index, item)
+# .remove()
+# items = ["apple", "banana", "grape"]
+# items.insert(1, "grape")
+# print(items)
+
+# Q7 update a list
+# numbers = [2, 4, 6, 8, 10]
+# numbers[3] = 99
+# print(numbers)
+
+# Q8
+# student = {
+#     "name": "Long",
+#     "age": 20,         
+#     "major": "Computer Science" 
+# }
+# # use .items()
+# for key, value in student.items():
+#     print(key)
+#     print(value)
+
+# Q9
+# car = {"brand": "Toyota", "year": 2020, "color": "white"}
+# car["color"] = "black"
+# car["owner"] = "Long"
+# print(car)
+
+# Q10 Remove Items from a Dictionary. .pop() and del
+# capitals = {"Vietnam": "Hanoi", "Japan": "Tokyo", "USA": "Washington", "France": "Paris"}
+# capitals.pop("Japan")
+# del capitals["France"]
+# print(capitals)
+
+# Q12: Maximum Value (No max())
+# numbers = [1,3,5,9,7]
+# max_num = numbers[0]
+# for i in range(1, len(numbers)):
+#     if numbers[i]> max_num:
+#         max_num = numbers[i]
+# print(max_num)
+
+# Q13 reverse list
+# Same with reverse string
+# def reverse_list(lst):
+#     return lst[::-1]
+# numbers = [1,3,5,9,7]
+# print(reverse_list(numbers))
+
+# Q17 Merge Two Dictionaries
+# Write a function merge_dicts(a, b) that returns a new dictionary containing all key–value pairs from a and b.
+# If duplicate keys exist, values from dictionary b override.
+# dict1 = {
+#     "id": 101,
+#     "name": "Alice",
+#     "score": 88
+# }
+# dict2 = {
+#     "id": 202,        # duplicate key: "id"
+#     "city": "Hanoi",
+#     "active": True
+# }
+# Below is the cleanest way to add multiple dicts into 1
+# In order of which dict is called
+# If a key already exists in the new dict (duplicate keys from different dict), the value is overridden
+# new_dict = {}
+# for key in (dict1, dict2):
+#     new_dict.update(key)
+# print(new_dict)
+
 # W3resource Python basic part 2    
 
 # Q1: Write a Python function that takes a sequence of numbers and determines 

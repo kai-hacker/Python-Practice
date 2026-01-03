@@ -1,0 +1,5 @@
+Line 1        in        input
+
+Line 2 in input
+Line 3 sth
+This section
