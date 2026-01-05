@@ -230,7 +230,25 @@
 #         count += 1
 #     print(header)
 #     print(count)
-    
+
+# WEEK 11
+
+# Panda, create a dataFrame
+import pandas as pd
+# Each is a column
+df = pd.DataFrame({
+    "name": ["A", "Bob", "C"], 
+    "age": [20, 21, 22],
+    "score": [85, 90, 95]
+})
+# Selecting column
+df["name"]
+# Multiple columns, index a lists
+# print(df[["name", "score"]])
+# Select rows with .iloc[]. The answer has dtype at the end
+print(df.iloc[1])
+
+
 
     
 
