@@ -232,21 +232,140 @@
 #     print(count)
 
 # WEEK 11
-
 # Panda, create a dataFrame
-import pandas as pd
-# Each is a column
-df = pd.DataFrame({
-    "name": ["A", "Bob", "C"], 
-    "age": [20, 21, 22],
-    "score": [85, 90, 95]
-})
-# Selecting column
-df["name"]
-# Multiple columns, index a lists
-# print(df[["name", "score"]])
-# Select rows with .iloc[]. The answer has dtype at the end
-print(df.iloc[1])
+# import pandas as pd
+# # Each is a column
+# df = pd.DataFrame({
+#     "name": ["A", "Bob", "C"], 
+#     "age": [20, 21, 22],
+#     "score": [85, 90, 95]
+# })
+# # Selecting column
+# df["name"]
+# # Multiple columns, index a lists
+# # print(df[["name", "score"]])
+# # Select rows with .iloc[]. The answer has dtype at the end
+# print(df.iloc[1])
+
+# WEEK 11 INCLASS EXERCISES AND CHALLENGE
+# Q1 Basic Statistics on a 1D Array
+# .min(), .max(), .mean()
+# import numpy as np
+# a = np.array([12, 5, 8, 20, 15, 3, 10])
+# print(a.min()) 
+# print(a.max())
+# print(a.mean())  
+
+# Q2 Filter Values in a 1D Array
+# import numpy as np
+# # .array(range())
+# a = np.array(range(1, 20+1))
+# # print(a)
+# # f you want to see it as a Python list with commas, print(a.tolist())
+# # array[logical filtering]
+# # print(a[a > 10])
+# print(a[a % 2 == 0])
+
+# Q3 Element-wise Operations
+# import numpy as np
+# a = np.array([1, 2, 3, 4, 5])
+# b = np.array([10, 20, 30, 40, 50])
+# Element-wise plus
+# print(a + b)
+# print(a * b)
+# print(abs(a-b))
+
+# Q4 
+# import numpy as np
+# a = np.array([[3, 5, 7],
+#             [2, 4, 6],
+#             [1, 8, 9]])
+# # Index[0] for first row, then use function
+# print(a[0].sum())
+
+# Q8 Multiple Statistics per Group
+# Group by department
+# Compute mean, minimum, and maximum salary for each department
+# Print the resulting table
+# Plot a bar chart of mean salary per department
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# df = pd.DataFrame({
+#     "dept": ["HR", "HR", "Sales", "Sales", "Marketing"],
+#     "salary": [1000, 2000, 500, 500, 2000]
+# })
+
+# # When you use groupby(), the grouped column 
+# # becomes the index of the DataFrame
+# dept_mean = df.groupby("dept")["salary"].mean()
+# dept_min = df.groupby("dept")["salary"].min()
+# dept_max = df.groupby("dept")["salary"].max()
+# # Create a new df, assign values to columns
+# result = pd.DataFrame({
+#     # There's result.index
+#     "mean": dept_mean,
+#     "min": dept_min,
+#     "max": dept_max
+# })
+# # print(result)
+# # Use result.index, then result["col_name"]
+# # plt.chart_type(), plt.xlabel, plt.ylabel
+# plt.bar(result.index, result["mean"])
+# # plt.xlabel("Department")
+# plt.ylabel("Mean Salary")
+# plt.show()
+
+# Q9 Time-based Grouping and Line Plot
+# Create a DataFrame with columns:
+# month (values like Jan, Feb, Mar, …)
+# sales
+# Tasks:
+# 1. Group by month
+# 2. Compute total sales per month
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# a = pd.DataFrame({
+#     "month": ["Jan", "Feb", "Jan", "Mar", "Feb", "Mar", "Jan"],
+#     "sales": [100, 150, 200, 300, 120, 180, 50]
+# })
+# # df row filtering
+# # print(a[a["month"] == "Jan"])
+# # .groupby()
+# # .groupby("col") + [col].function()
+# total_sales = a.groupby("month")["sales"].sum()
+# print(total_sales)
+# # total_sales is a Series (not a DataFrame), so it doesn't have columns named "sales" or "month" anymore. 
+# # The month names are in the index
+# plt.plot(total_sales)
+# plt.show()
+
+# Q10 Grouping with Filtering and Plot
+# 1. Group by category
+# 2. Compute the average price per category
+# 3. Filter categories whose average price is greater than 50
+# 4. Plot a bar chart of the remaining categories and their average prices
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# data = {
+#   "product": ["pen", "pencil", "battery", "cake"],
+#   "category": ["stationery", "stationery", "others", "food"],
+#   "price": [50, 40, 80, 10]
+# }
+# df = pd.DataFrame(data)
+# # groupby, then find average
+# # new_df is a series. 1 dimensional, index & values
+# new_df = df.groupby("category")["price"].mean()
+# # panda series boolean indexing. Vì lí do nào đó giống numpy array indexing
+# # chứ ko có tài liệu giải thích
+# new_df_2 = new_df[new_df > 50]
+# new_df_3 = new_df[new_df <= 50]
+# print(new_df_3)
+# # syntax: plt.bar(x,y)
+# # series.index & series.values
+# plt.bar(new_df_3.index, new_df_3.values)
+# plt.show()
+
+# WEEK 11 POST CLASS EXERCISES AND CHALLENGE
 
 
 
