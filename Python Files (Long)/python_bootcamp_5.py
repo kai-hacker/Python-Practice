@@ -366,8 +366,67 @@
 # plt.show()
 
 # WEEK 11 POST CLASS EXERCISES AND CHALLENGE
+# Q1 Mean and Threshold Filter (1D Array)
+# Create a 1D NumPy array containing the values:
+# [4, 12, 7, 25, 9, 16, 3, 20]
+# Tasks:
+# 1. Compute the mean of the array
+# 2. Create a new array containing only values greater than the mean
+# 3. Print the mean and the filtered array
+# import numpy as np
+# a = np.array([4, 12, 7, 25, 9, 16, 3, 20])
+# print(a.mean())
+# b = a[a > a.mean()]
+# print(b)
 
+# Q2 Create a 1D NumPy array with values from 10 to 30 (inclusive).
+# Tasks:
+# 1. Select elements at odd indices
+# 2. Select elements at even indices
+# 3. Print both resulting arrays
+# import numpy as np
+# a = np.array(range(10,31))
+# odd_array = a[a % 2 == 1]
+# even_array = a[a % 2 == 0]
+# print(odd_array)
+# print(even_array)
 
+# Q3 Row-wise Computation (2D Array)
+# import numpy as np
+# a = np.array(
+#     [[10, 20, 30],
+#     [5, 15, 25],
+#     [2, 4, 6],
+#     [7, 14, 21]]
+# )
+# # sum of each row, 0 - 3
+# print(a[0].sum())
+# print(a[1].sum())
+# # mean of each row, 0 - 3
+# # print(a[0].mean())
+# # print(a[1].mean())
+# # sum of each col, 0 - 2
+# print(a[:,0].sum())
+# # mean of each row, 0 - 3
+
+# Q4 Conditional Replacement
+# Create a 2D NumPy array with shape (4, 4) containing integers from 1 to 16.
+# 1. Replace all values divisible by 3 with -1
+# 2. Count how many values were replaced
+# 3. Print the modified array and the count
+# import numpy as np
+# # arrange and reshape
+# a = np.arange(1, 17).reshape(4, 4)
+# # Python array assignment syntax
+# a[a % 3 == 0] = -1
+# # Easy to use len(). All the values to count has changed to -1
+# count = len(a[a == -1])
+# print(a)
+# print(count)
+# # 1. Create a mask for values divisible by 3
+# mask = (a % 3 == 0)
+# # 2. Count how many values will be replaced
+# count = np.sum(mask)
 
     
 
