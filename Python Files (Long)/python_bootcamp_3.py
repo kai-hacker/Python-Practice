@@ -637,6 +637,51 @@
 #     new_dict.update(key)
 # print(new_dict)
 
+# Q30
+# Write a function
+# are_values_sorted(d)
+# that takes a dictionary d whose values are numbers and returns True if the values, in the
+# order of their keys sorted alphabetically, form a non-decreasing sequence. Otherwise,
+# return False.
+# Steps inside the function:
+# 1. Get a sorted list of keys.
+# 2. Build a list of corresponding values in that key order.
+# 3. Check if this value list is non-decreasing.
+# d = {
+#     "zebra": 3,
+#     "apple": 10,
+#     "monkey": 5,
+#     "banana": 20,
+#     "cat": 7
+# }
+
+# d2 = {
+#     "apple": 10,
+#     "banana": 20
+# }
+# def are_values_sorted(d):
+#     # get the list of keys:
+#     # use syntax ... for ... in
+#     keys = [key for key in d]
+#     # sort the keys
+#     keys.sort()
+#     print(keys)
+#     # built a list of corresponding values in the keys order
+#     # empty list
+#     values = []
+#     for key in keys:
+#         values.append(d[key])
+#     print(values)
+#     # This loop goes from the 2nd value to the final value of the "values" list 
+#     for i in range(1, len(values)):
+#         if values[i] < values[i - 1]:
+#             return False
+#     return True
+# if are_values_sorted(d2):
+#     print("The dictionary forms a non-decreasing sequence ")
+# else:
+#     print("The dictionary does not form a non-decreasing sequence ") 
+
 # W3resource Python basic part 2    
 
 # Q1: Write a Python function that takes a sequence of numbers and determines 
