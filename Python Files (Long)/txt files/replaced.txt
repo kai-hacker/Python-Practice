@@ -1,0 +1,4 @@
+Hi world!
+Java is awesome.
+I love programming in Java.
+Hi everyone.

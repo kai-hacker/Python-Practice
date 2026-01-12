@@ -1,0 +1,4 @@
+Category summary report
+Food: 27.8
+Transport: 5.0
+Books: 20.0

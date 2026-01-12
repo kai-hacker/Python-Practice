@@ -27,4 +27,17 @@
 #     first = False
 #     num += 1
 
-    
+fname_1 = 'Python Files (Long)/txt files/input.txt'
+fname_2 = 'Python Files (Long)/txt files/output.txt'
+# try: 
+#     f_input = open(fname_1, 'r')
+#     f_output = open(fname_2, 'w')
+#     for line in f_input:
+#         f_output.write(line)
+# except:
+#     print('Files cannot be opened:', f_input, ",", f_output)
+#     exit()
+
+with open(fname_1, 'r') as f_input, open(fname_2, 'w') as f_output:
+    for line in f_input:
+        f_output.write(line)

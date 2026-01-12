@@ -196,6 +196,115 @@
 # fname_output = 'Python Files (Long)/txt files/merged.txt'
 # merge_alternating(fname_input_1, fname_input_2, fname_output)
 
+# Q20 — Mini Project: Clean + Summarize CSV
+# Given transactions.csv with columns: date,category,amount
+# Some rows may have:
+# ● missing category
+# ● invalid amount (not a number)
+# Write these functions:
+# 1. is_valid_amount(s) → checks whether s is a valid number
+# 2. clean_transactions(input_csv, clean_csv, bad_rows_txt) 
+# → writes valid rows to clean_transactions.csv, invalid rows to bad_rows.txt
+# 3. sum_by_category(clean_csv) → returns dictionary category ->
+# total_amount
+# 4. write_category_summary(summary, out_txt) → writes a neat summary
+# report
+# In main:
+# ● call cleaning
+# ● then compute totals per category
+# ● output category_summary.tx
+# import csv
+# def is_valid_amount(s):
+#     try:
+#         value = float(s)
+#         if value >= 0:
+#             return True
+#         else:
+#             return False
+#     # ValueError is a built-in python exception
+#     except ValueError:
+#         return False
+# def clean_transactions(input_csv, clean_csv, bad_rows_txt):
+#     # The 3 parameters are file names
+#     with (open(input_csv, 'r', newline = "") as f_1, 
+#           open(clean_csv, 'w', newline = "") as f_2, 
+#           open(bad_rows_txt, 'w') as f_3):
+#         # Get the first row, the column names, as a string
+#         # after this, the next time we will read from the 2nd line
+#         headers = next(f_1)
+#         csv_writer = csv.writer(f_2)
+#         for row in f_1:
+#             # This list will have 3 elements, index 0 to 2
+#             row_list = row.strip().split(",")
+#             # The first and second column must not be empty
+#             # The third column must have a valid number
+#             if (row_list[0] != "" 
+#                 and row_list[1] != "" 
+#                 and is_valid_amount(row_list[2])):
+#                 csv_writer.writerow(row_list)
+#             else:
+#                 f_3.write(row)
+# input_csv = 'Python Files (Long)/txt files/transactions.csv'
+# clean_csv = 'Python Files (Long)/txt files/clean.csv'
+# bad_rows_txt = 'Python Files (Long)/txt files/bad_rows.txt'
+# clean_transactions(input_csv, clean_csv, bad_rows_txt)
+# def sum_by_category(clean_csv):
+#     category_dict = {}
+#     with open(clean_csv, 'r', newline="") as f_2:
+#         next(f_2)  # skip header
+#         for row in f_2:
+#             row_list = row.strip().split(",")
+#             category = row_list[1]
+#             amount = float(row_list[2])
+#             category_dict[category] = category_dict.get(category, 0.0) + amount
+#     return category_dict
+# summary = sum_by_category(clean_csv)
+# def write_category_summary(summary, out_txt):
+#     with open(out_txt, 'w') as f:
+#         f.write("Category summary report\n")
+#         for key, value in summary.items():
+#             f.write(f"{key}: {value}\n")
+# out_txt = 'Python Files (Long)/txt files/summary_report.txt'
+# write_category_summary(summary, out_txt)
+
+# WEEK 10 POSTCLASS EXERCISES AND CHALLENGE
+# Q3 — Replace Words from a Mapping
+# Inputs: text.txt, mapping.txt
+# ● mapping.txt format: each line is old_word,new_word (one pair per line)
+# Task: Create replaced.txt by replacing every occurrence of old_word with new_word
+# for all pairs in mapping.txt.
+# Requirement: Apply mappings in the order they appear in mapping.txt.
+# 
+# fname_1 = 'Python Files (Long)/txt files/text.txt'
+# fname_2 = 'Python Files (Long)/txt files/mapping.txt'
+# fname_3 = 'Python Files (Long)/txt files/replaced.txt'
+# with open(fname_1, 'r') as f_1, open(fname_2, 'r') as f_2, open(fname_3, 'w') as f_3:
+#     # All the content of f_1 is assigned to inp_1
+#     inp_1 = f_1.read()
+#     # Create a list of f_2 lines
+#     f_2_lines = f_2.readlines()
+#     # Modify f_2_lines
+#     new_list = []
+#     # 3 elements, each is a line
+#     for line in f_2_lines:
+#         line = line.strip()
+#         # line is now a list
+#         line = line.split(",")
+#         # Create a list of lists
+#         new_list.append(line)
+#     print(new_list)
+#     for line in new_list:
+#         # replace needs assignment
+#         inp_1 = inp_1.replace(line[0], line[1])
+#     # write the whole modifed inp_1 into f_3
+#     f_3.write(inp_1)
+    
+    
+    
+
+
+
+
 # W3RESOURCES Python File Input Output
 # Q4: Read Last N Lines
 # fname = 'Python Files (Long)/txt files/w3q4.txt'
@@ -428,6 +537,8 @@
 # # 2. Count how many values will be replaced
 # count = np.sum(mask)
 
+# Use 'while' loop with files and .readline() with .txt
+def merge_alternating(fname_input_1, fname_input_2, fname_output):
     
 
 

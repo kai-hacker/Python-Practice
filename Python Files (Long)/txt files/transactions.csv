@@ -1,0 +1,9 @@
+date,category,amount
+2026-01-01,Food,12.5
+2026-01-02,Transport,5
+2026-01-03,,7.2
+2026-01-04,Food,abc
+2026-01-05,Books,20
+2026-01-06,Food,15.3
+2026-01-07,Transport,-2
+2026-01-08,Food,
