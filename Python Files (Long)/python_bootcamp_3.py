@@ -637,6 +637,59 @@
 #     new_dict.update(key)
 # print(new_dict)
 
+# Q19 — Word Frequency Counter
+# Write a function word_frequency(text) that:
+# 1. Splits the sentence into words
+# 2. Creates a dictionary where keys are words and values are the number of occurrences
+# Return the dictionary.
+# In main, input a sentence, call the function, and print the dictionary.
+
+# split auto split at white space, new line
+# def word_frequency(text):
+#     words = text.split()
+#     words_freq = {}
+#     for key in words:
+#         words_freq[key] = words_freq.get(key, 0) + 1
+#     print(words_freq)
+# sentence = "welcome to the jungle welcome"
+# word_frequency(sentence)
+
+# Q20 Student Grades Report
+# Given a dictionary mapping student names to grades, write three functions:
+# 1. average_grade(d) → returns the average grade
+# 2. highest_grade(d) → returns the name and grade of the highest-scoring student
+# 3. print_report(d) → prints:
+# ○ Total students
+# ○ Average grade
+# ○ Student with the highest grade
+# In main, create a dictionary of at least 4 students, call all three functions, and display the full
+# report.
+# d = {
+#     "Long": 100,
+#     "Duy": 99,
+#     "Bao": 80,
+#     "Hai": 50
+# }
+# # Use loop to find max
+# # At the start, max_key & max_value is not determined
+# # Dictionary can't just index the 1st position with [0]
+# max_key = None
+# max_value = None
+# for key, value in d.items():
+#     if max_key == None:
+#         max_key = key
+#         max_value = value
+#     elif value > max_value:
+#         max_key = key
+#         max_value = value
+# print(max_key, max_value)
+# print("Total students: ", len(d))
+# def average_grade(d):
+#     values = [grade for grade in d.values()]
+#     res = sum(values) / len(d)
+#     return res
+# print("Average grade: ", average_grade(d))
+
 # Q30
 # Write a function
 # are_values_sorted(d)
