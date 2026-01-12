@@ -165,36 +165,36 @@
 
 # Q14: Merge Two Text Files Alternating Line
 # Use 'while' loop with files and .readline() with .txt
-# def merge_alternating(fname_input_1, fname_input_2, fname_output):
-#     with open(fname_input_1, 'r') as f_input_1, open(fname_input_2, 'r') as f_input_2, open(fname_output, 'w') as f_output:
-#         # A loop that does not know when it will end. 
-#         # Use "while" instead of "for"
-#         while True:
-#             # read 1 line from a.txt
-#             line1 = f_input_1.readline()
-#             # read 1 line from b.txt
-#             line2 = f_input_2.readline()
-#             # if both line1 & line2 do not exists, meaning both files have been fully read
-#             if not line1 and not line2:
-#                 break
-#             # check again if line1 exists:
-#             if line1:
-#                 # If the line does not end with a newline, add one
-#                 # use .endswith("\n")
-#                 if not line1.endswith("\n"):
-#                     f_output.write(line1 + "\n")
-#                 else:
-#                     f_output.write(line1)
+def merge_alternating(fname_input_1, fname_input_2, fname_output):
+    with open(fname_input_1, 'r') as f_input_1, open(fname_input_2, 'r') as f_input_2, open(fname_output, 'w') as f_output:
+        # A loop that does not know when it will end. 
+        # Use "while" instead of "for"
+        while True:
+            # read 1 line from a.txt
+            line1 = f_input_1.readline()
+            # read 1 line from b.txt
+            line2 = f_input_2.readline()
+            # if both line1 & line2 do not exists, meaning both files have been fully read
+            if not line1 and not line2:
+                break
+            # check again if line1 exists:
+            if line1:
+                # If the line does not end with a newline, add one
+                # use .endswith("\n")
+                if not line1.endswith("\n"):
+                    f_output.write(line1 + "\n")
+                else:
+                    f_output.write(line1)
 
-#             if line2:
-#                 if not line2.endswith("\n"):
-#                     f_output.write(line2 + "\n")
-#                 else:
-#                     f_output.write(line2)
-# fname_input_1 = 'Python Files (Long)/txt files/a.txt'
-# fname_input_2 = 'Python Files (Long)/txt files/b.txt'
-# fname_output = 'Python Files (Long)/txt files/merged.txt'
-# merge_alternating(fname_input_1, fname_input_2, fname_output)
+            if line2:
+                if not line2.endswith("\n"):
+                    f_output.write(line2 + "\n")
+                else:
+                    f_output.write(line2)
+fname_input_1 = 'Python Files (Long)/txt files/a.txt'
+fname_input_2 = 'Python Files (Long)/txt files/b.txt'
+fname_output = 'Python Files (Long)/txt files/merged.txt'
+merge_alternating(fname_input_1, fname_input_2, fname_output)
 
 # Q20 — Mini Project: Clean + Summarize CSV
 # Given transactions.csv with columns: date,category,amount
@@ -536,9 +536,8 @@
 # mask = (a % 3 == 0)
 # # 2. Count how many values will be replaced
 # count = np.sum(mask)
+    
 
-# Use 'while' loop with files and .readline() with .txt
-def merge_alternating(fname_input_1, fname_input_2, fname_output):
     
 
 
