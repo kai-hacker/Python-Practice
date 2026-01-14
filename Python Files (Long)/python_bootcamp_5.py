@@ -607,20 +607,58 @@
 # mask = (a % 3 == 0)
 # # 2. Count how many values will be replaced
 # count = np.sum(mask)
-    
-# Q6 — Average Score per Subject
-import pandas as pd
-import matplotlib.pyplot as plt
-scores = pd.DataFrame({
-    "student":['a', 'b', 'c', 'd', 'e', 'f', 'g','h'],
-    "subject":['Math', 'Physics', 'Art', 'Math', 'Physics', 'Art', 'Math', 'Physics'],
-    "score":[10,7,3,6,10,7,3,6]
-})
-average_scores = scores.groupby("subject")["score"].mean()
-print(average_scores)
-plt.bar(average_scores.index, average_scores.values)
-plt.show()
 
+
+# Q5 Column wise filtering
+# 2-D array. Compute the sum of each column
+# Create a new 1-D array containing only column sums greater than 15
+# Print the column sum and the filtered result
+# import numpy as np
+# array = np.array([
+#     [10, 10, 0],
+#     [3, 3, 0],
+#     [1, 3, 7],
+# ])
+# column_sums = array.sum(axis=0)
+# print(column_sums)
+# filtered = column_sums[column_sums > 15]
+# print(filtered)
+
+# Q6 — Average Score per Subject
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# scores = pd.DataFrame({
+#     "student":['a', 'b', 'c', 'd', 'e', 'f', 'g','h'],
+#     "subject":['Math', 'Physics', 'Art', 'Math', 'Physics', 'Art', 'Math', 'Physics'],
+#     "score":[10,7,3,6,10,7,3,6]
+# })
+# average_scores = scores.groupby("subject")["score"].mean()
+# print(average_scores)
+# plt.bar(average_scores.index, average_scores.values)
+# plt.show()
+
+# Q9
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# data = {
+#     "team": ["A", "B", "C", "A", "B"],
+#     "salary": [50000, 60000, 55000, 52000, 61000]
+# }
+# df = pd.DataFrame(data)
+# # min, max, mean salary each team
+# min_salary = df.groupby("team")["salary"].min()
+# max_salary = df.groupby("team")["salary"].max()
+# mean_salary = df.groupby("team")["salary"].mean()
+# # print(min_salary)
+# # print(max_salary)
+# # print(mean_salary)
+# mean_salary_filtered = mean_salary[mean_salary > 60000]
+# print(mean_salary_filtered)
+# plt.bar(mean_salary.index, mean_salary.values)
+# plt.xlabel("Team")
+# plt.ylabel("Mean Salary")
+# plt.title("Teams' Means Salaries Bar Chart")
+# plt.show()
 
 
 

@@ -1,0 +1,5 @@
+a
+acd
+ab
+bca
+acab

@@ -1,16 +1,12 @@
 # Sample test 4
 # Q1:
 # n = int(input("Enter a positive number: "))
-# if n != 0:
-#     print("1", end=", ")
-#     # The next perfect square is 4
-#     # Find the square of 2, then 3, and so on
-#     num = 2
-#     square = 2**2
-#     while square <= n:
-#         print(square, end=", ")
-#         num += 1
-#         square = num ** 2 
+# starting_num = 1
+# while starting_num**2 <= n:
+#     if starting_num != 1:
+#         print(", ", end = "")
+#     print(starting_num**2, end = "")
+#     starting_num += 1
 # 
 # n = int(input("Enter a positive number: "))
 # num = 1
@@ -28,6 +24,35 @@
 #     first = False
 #     num += 1
 
+# Q2:
+# fname_1 = "Python Files (Long)/txt files/file.txt"
+# fname_2 = "Python Files (Long)/txt files/substring.txt"
+# with open(fname_1, 'r') as f1, open(fname_2, 'w') as f2:
+#     inp = f1.read()
+#     f1.seek(0) 
+#     for line in f1:
+#         if inp.count(line.strip()) >= 2:
+#             f2.write(line)
+
+# Q3: 
+# import csv
+# def highest_score(student_id):
+#     fname = "Python Files (Long)/txt files/scores.csv"
+#     with open(fname, 'r', newline = "") as csvfile:
+#         score = None
+#         subject = None
+#         headers = next(csvfile)
+#         for row in csvfile:
+#             row_list = row.strip().split(",")
+#             if (row_list[0] == student_id):
+#                 if score == None or int(row_list[2]) > score:
+#                     score = int(row_list[2])
+#                     subject = row_list[1]
+#         return subject
+# student_id = 'S002'
+# s = highest_score(student_id)
+# print(s)
+
 # Q4:
 # import numpy as np
 # scores_subjects = np.array([
@@ -43,3 +68,65 @@
 #     if index_position == None or student_score > scores_subjects[index_position].mean():
 #         index_position = student
 # print(f"Answer: {index_position}")
+
+# Q5:
+# Solution 1
+# def most_similar(query):
+#     fname = "Python Files (Long)/txt files/words.txt"
+#     with open(fname, 'r') as f:
+#         # Get the 1st list of [word in the file, number of similar characters]
+#         # A list of lists
+#         lists = []
+#         for word in f:
+#             word = word.strip()
+#             shorter_word = None
+#             longer_word = None
+#             if len(query) > len(word):
+#                 shorter_word = word #abs
+#                 longer_word = query #about
+#             else: 
+#                 shorter_word = query
+#                 longer_word = word
+#             count = 0
+#             for char in range(len(shorter_word)):
+#                 if shorter_word[char] == longer_word[char]:
+#                     count += 1
+#                 else:
+#                     break
+#             lists.append([word, count])
+#         similar_chars = None
+#         for i in range(len(lists)):
+#             if similar_chars == None or lists[i][1] > similar_chars:
+#                 similar_chars = lists[i][1]
+#         final_list = []
+#         for i in range(len(lists)):
+#             if lists[i][1] == similar_chars:
+#                 final_list.append(lists[i][0])
+#         return final_list
+# query = 'band'
+# print(most_similar(query))
+# Solution 2
+def most_similar(query):
+    fname = "Python Files (Long)/txt files/words.txt"
+    with open(fname, 'r') as f:
+        # Count matching characters from the start for each word
+        word_matches = []
+        for word in f:
+            word = word.strip()
+            count = 0
+            for i in range(min(len(query), len(word))):
+                if query[i] == word[i]:
+                    count += 1
+                else:
+                    break
+            word_matches.append((word, count))
+        
+        # Find maximum match count
+        max_count = max(match[1] for match in word_matches)
+        
+        # Return all words with maximum matches
+        return [word for word, count in word_matches if count == max_count]
+
+
+
+

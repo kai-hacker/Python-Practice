@@ -1,3 +1,10 @@
-student,score
-rey,80
-kin,49
+student_id,subject,score
+S001,Math,85
+S001,Physics,92
+S001,Chemistry,78
+S002,Math,88
+S002,Physics,84
+S002,Chemistry,90
+S003,Math,75
+S003,Physics,80
+S003,Chemistry,83
