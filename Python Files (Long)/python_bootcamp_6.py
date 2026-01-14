@@ -1,4 +1,5 @@
 # Sample test 4
+# Q1:
 # n = int(input("Enter a positive number: "))
 # if n != 0:
 #     print("1", end=", ")
@@ -27,17 +28,18 @@
 #     first = False
 #     num += 1
 
-fname_1 = 'Python Files (Long)/txt files/input.txt'
-fname_2 = 'Python Files (Long)/txt files/output.txt'
-# try: 
-#     f_input = open(fname_1, 'r')
-#     f_output = open(fname_2, 'w')
-#     for line in f_input:
-#         f_output.write(line)
-# except:
-#     print('Files cannot be opened:', f_input, ",", f_output)
-#     exit()
-
-with open(fname_1, 'r') as f_input, open(fname_2, 'w') as f_output:
-    for line in f_input:
-        f_output.write(line)
+# Q4:
+# import numpy as np
+# scores_subjects = np.array([
+#  [80, 85, 85],
+#  [85, 88, 85],
+#  [85, 85, 88]
+# ])
+# # compute the average score for each student
+# index_position = None
+# for student in range(len(scores_subjects)):
+#     student_score = scores_subjects[student].mean()
+#     print(f"Student at index {student}'s averge score: {student_score}")
+#     if index_position == None or student_score > scores_subjects[index_position].mean():
+#         index_position = student
+# print(f"Answer: {index_position}")

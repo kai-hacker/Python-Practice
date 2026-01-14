@@ -28,10 +28,6 @@
 #         if line.lower().find(key_word.lower()) != -1:
 #             f_clean.write(line)
 
-# Exercise 20 — Mini Project: Clean + Summarize CSV
-# Given transactions.csv with columns: date,category,amount
-# is_valid_amount(s) → checks whether s is a valid number
-
 # Q6: Sum Numbers from a Text File. Read from numbers.txt, where each line contains one integer.
 # fname = 'Python Files (Long)/txt files/numbers.txt'
 # sum = 0
@@ -100,6 +96,7 @@
 #     reader = csv.reader(csvinput)
 #     writer = csv.writer(csvoutput)
 #     first_row = next(reader)
+#     print(first_row)
 #     gpa_index = first_row.index("gpa")
 #     count = 0
 #     for row in reader: 
@@ -195,6 +192,33 @@
 # fname_input_2 = 'Python Files (Long)/txt files/b.txt'
 # fname_output = 'Python Files (Long)/txt files/merged.txt'
 # merge_alternating(fname_input_1, fname_input_2, fname_output)
+
+# Q15 — Functions: Validate Numbers File
+# numbers.txt is supposed to contain one integer per line, but some lines may be invalid.
+# Write:
+# ● is_valid_int(s) → returns True if s can be parsed as an integer
+# ● split_valid_invalid(input_path, valid_out, invalid_out) 
+# → writes valid integers to valid.txt and invalid lines to invalid.txt
+# def is_valid_int(s):
+#     try:
+#         # if int(0) leads to False
+#         # Check if we can get here & not get to error
+#         int(s)
+#         return True
+#     except ValueError:
+#         return False
+# def split_valid_invalid(input_path, valid_out, invalid_out):
+#     with open(input_path, 'r') as f1, open(valid_out, 'w') as f2, open(invalid_out, 'w') as f3:
+#         for line in f1:
+#             # \n needs to be removed for proper checking
+#             if is_valid_int(line.rstrip()):
+#                 f2.write(line)
+#             else:
+#                 f3.write(line)
+# input_path = 'Python Files (Long)/txt files/numbers.txt'
+# valid_out = 'Python Files (Long)/txt files/valid_out.txt'
+# invalid_out = 'Python Files (Long)/txt files/invalid_out.txt'
+# split_valid_invalid(input_path, valid_out, invalid_out)
 
 # Q20 — Mini Project: Clean + Summarize CSV
 # Given transactions.csv with columns: date,category,amount
@@ -301,22 +325,22 @@
 
 # Q4 Find Top 3 Longest Lines
 # Find the longest lines, but 3 times
-fname_1 = 'Python Files (Long)/txt files/find_lines.txt'
-fname_2 = 'Python Files (Long)/txt files/top_3_longest.txt'
-with open(fname_1, 'r') as f1, open(fname_2, 'w') as f2:
-    list_1 = f1.readlines()
-    # loop 3 times
-    for i in range(3):
-        # assume the 1st is the longest
-        longest_line = list_1[0]
-        index = 0
-        for i in range(1, len(list_1)):
-            if len(list_1[i]) > len(longest_line):
-                longest_line = list_1[i]
-                index = i
-        f2.write(longest_line)
-        list_1.pop(index)
-        print(list_1)
+# fname_1 = 'Python Files (Long)/txt files/find_lines.txt'
+# fname_2 = 'Python Files (Long)/txt files/top_3_longest.txt'
+# with open(fname_1, 'r') as f1, open(fname_2, 'w') as f2:
+#     list_1 = f1.readlines()
+#     # loop 3 times
+#     for i in range(3):
+#         # assume the 1st is the longest
+#         longest_line = list_1[0]
+#         index = 0
+#         for i in range(1, len(list_1)):
+#             if len(list_1[i]) > len(longest_line):
+#                 longest_line = list_1[i]
+#                 index = i
+#         f2.write(longest_line)
+#         list_1.pop(index)
+#         print(list_1)
 
 # W3RESOURCES Python File Input Output
 # Q4: Read Last N Lines
@@ -335,6 +359,40 @@ with open(fname_1, 'r') as f1, open(fname_2, 'w') as f2:
 #     for line in f:
 #         lines.append(line)
 # print(lines)
+
+# Q9: Find Maximum Amount Row
+# Input: transactions.csv with columns date,category,amount
+# Task: Create max_transaction.txt containing exactly one line describing 
+# the row with the largest amount.
+# fname = 'Python Files (Long)/txt files/transactions_2.csv'
+# fname_2 = 'Python Files (Long)/txt files/max_transaction.txt'
+# with open(fname, 'r', newline = "") as csvfile, open(fname_2, 'w') as f:
+#     headers = next(csvfile)
+#     largest = None
+#     largest_amount_row = None
+#     for row in csvfile:
+#         row_list = row.strip().split(",")
+#         if largest == None or float(row_list[2]) > largest:
+#             largest = float(row_list[2])
+#             largest_amount_row = row
+#     f.write(largest_amount_row)
+
+# Q10 Add a status column
+# import csv
+# fname = 'Python Files (Long)/txt files/scores.csv'
+# fname_2 = 'Python Files (Long)/txt files/scores_with_status.csv'
+# with open(fname, 'r', newline = "") as f1, open(fname_2, 'w', newline = "") as f2:
+#     headers = next(f1)
+#     writer = csv.writer(f2)
+#     writer.writerow(['student','score','status'])
+#     for row in f1:
+#         row_list = row.strip().split(",")
+#         new_list = row_list.copy()
+#         if int(row_list[1]) >= 50:
+#             new_list.append("Pass")
+#         else: 
+#             new_list.append("Fail")
+#         writer.writerow(new_list)
 
 # W3RESOURCES Python CSV File Reading and Writing
 # Q8: CSV Skip Header and Count. Write a Python program that reads each row of a given csv file and 
@@ -550,8 +608,20 @@ with open(fname_1, 'r') as f1, open(fname_2, 'w') as f2:
 # # 2. Count how many values will be replaced
 # count = np.sum(mask)
     
+# Q6 — Average Score per Subject
+import pandas as pd
+import matplotlib.pyplot as plt
+scores = pd.DataFrame({
+    "student":['a', 'b', 'c', 'd', 'e', 'f', 'g','h'],
+    "subject":['Math', 'Physics', 'Art', 'Math', 'Physics', 'Art', 'Math', 'Physics'],
+    "score":[10,7,3,6,10,7,3,6]
+})
+average_scores = scores.groupby("subject")["score"].mean()
+print(average_scores)
+plt.bar(average_scores.index, average_scores.values)
+plt.show()
 
-    
+
 
 
 
