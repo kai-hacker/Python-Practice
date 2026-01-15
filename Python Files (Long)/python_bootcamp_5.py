@@ -433,14 +433,23 @@
 # Q6 CSV Clean Entries
 # Write a Python program that reads a CSV file and remove initial spaces, 
 # quotes around each entry and the delimiter.
-import csv
-fname = 'Python Files (Long)/txt files/people.csv'
-headers = None
-cleaned_data = []
-with open(fname, 'r', newline = '') as csvfile:
-    reader = csv.reader(csvfile)
-    headers = next(reader)
-
+# import csv
+# fname = 'Python Files (Long)/txt files/people.csv'
+# headers = None
+# cleaned_data = []
+# with open(fname, 'r', newline = '') as csvfile:
+#     reader = csv.reader(csvfile)
+#     headers = next(reader)
+#     for row in reader:
+#         cleaned_row = []
+#         for i in row:
+#             i = i.replace('"','').lstrip()
+#             cleaned_row.append(i)
+#         cleaned_data.append(cleaned_row)
+# with open(fname, 'w', newline = '') as csvfile:
+#     writer = csv.writer(csvfile)
+#     writer.writerow(headers)
+#     writer.writerows(cleaned_data)
 
 # Q8: CSV Skip Header and Count. Write a Python program that reads each row of a given csv file and 
 # skip the header of the file. Also print the number of rows and the field names.
@@ -457,6 +466,25 @@ with open(fname, 'r', newline = '') as csvfile:
 #         count += 1
 #     print(header)
 #     print(count)
+
+# Q10
+# import csv
+# data = [
+#     ["id", "name", "age", "city"],
+#     [1, "John", 25, "London"],
+#     [2, "Anna", 30, "Paris"],
+#     [3, "Minh", 22, "Hanoi"],
+#     [4, "Sara", 28, "Berlin"]
+# ]
+# fname = 'Python Files (Long)/txt files/people.csv'
+# with open(fname, 'w', newline="") as csvfile:
+#     writer = csv.writer(csvfile)
+#     writer.writerows(data)
+# with open(fname, 'r', newline="") as csvfile:
+#     reader = csv.reader(csvfile)
+#     for row in reader:
+#         print(row)
+
 
 # WEEK 11
 # Panda, create a dataFrame
