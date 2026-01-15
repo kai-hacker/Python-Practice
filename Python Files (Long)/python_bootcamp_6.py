@@ -106,26 +106,26 @@
 # query = 'band'
 # print(most_similar(query))
 # Solution 2
-def most_similar(query):
-    fname = "Python Files (Long)/txt files/words.txt"
-    with open(fname, 'r') as f:
-        # Count matching characters from the start for each word
-        word_matches = []
-        for word in f:
-            word = word.strip()
-            count = 0
-            for i in range(min(len(query), len(word))):
-                if query[i] == word[i]:
-                    count += 1
-                else:
-                    break
-            word_matches.append((word, count))
+# def most_similar(query):
+#     fname = "Python Files (Long)/txt files/words.txt"
+#     with open(fname, 'r') as f:
+#         # Count matching characters from the start for each word
+#         word_matches = []
+#         for word in f:
+#             word = word.strip()
+#             count = 0
+#             for i in range(min(len(query), len(word))):
+#                 if query[i] == word[i]:
+#                     count += 1
+#                 else:
+#                     break
+#             word_matches.append((word, count))
         
-        # Find maximum match count
-        max_count = max(match[1] for match in word_matches)
+#         # Find maximum match count
+#         max_count = max(match[1] for match in word_matches)
         
-        # Return all words with maximum matches
-        return [word for word, count in word_matches if count == max_count]
+#         # Return all words with maximum matches
+#         return [word for word, count in word_matches if count == max_count]
 
 
 
