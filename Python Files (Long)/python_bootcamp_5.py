@@ -377,6 +377,40 @@
 #             largest_amount_row = row
 #     f.write(largest_amount_row)
 
+# Q8 Longest word finder
+# import string
+# fname = 'Python Files (Long)/txt files/words_freq_counter.txt'
+# with open(fname, 'r') as f:
+#     inp = f.read()
+# for p in string.punctuation:
+#     inp = inp.replace(p,"")
+# words = inp.lower().split()
+# print(words)
+# longest_word = None
+# for word in words:
+#     if longest_word == None or len(longest_word) < len(word):
+#         longest_word = word
+# print(longest_word)
+
+# Q10 Word Frequency Counter
+# import string
+# fname = 'Python Files (Long)/txt files/words_freq_counter.txt'
+# with open(fname, 'r') as f:
+#     inp = f.read()
+# for p in string.punctuation:
+#     inp = inp.replace(p,"")
+# words = inp.lower().split()
+# print(words)
+# distinct_words  = []
+# for word in words:
+#     if word not in distinct_words:
+#         distinct_words.append(word)
+# print(distinct_words)
+# word_freq = {}
+# for word in distinct_words:
+#     word_freq.update({word: words.count(word)})
+# print(word_freq)
+
 # Q10 Add a status column
 # import csv
 # fname = 'Python Files (Long)/txt files/scores.csv'
@@ -395,6 +429,19 @@
 #         writer.writerow(new_list)
 
 # W3RESOURCES Python CSV File Reading and Writing
+
+# Q6 CSV Clean Entries
+# Write a Python program that reads a CSV file and remove initial spaces, 
+# quotes around each entry and the delimiter.
+import csv
+fname = 'Python Files (Long)/txt files/people.csv'
+headers = None
+cleaned_data = []
+with open(fname, 'r', newline = '') as csvfile:
+    reader = csv.reader(csvfile)
+    headers = next(reader)
+
+
 # Q8: CSV Skip Header and Count. Write a Python program that reads each row of a given csv file and 
 # skip the header of the file. Also print the number of rows and the field names.
 # import csv
